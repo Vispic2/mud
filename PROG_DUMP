@@ -1,0 +1,2110 @@
+NAME: /clone/user/user.c
+INHERITS:
+      name                    fio    vio
+      ----------------        ---    ---
+	inherit/char/char.c       0      0
+	feature/autoload.c      422     50
+	feature/save.c          427     51
+FUNCTIONS:
+      name                  offset  mods   flags   fio  # locals  # args
+      --------------------- ------  ----  -------  ---  --------  ------
+   0: set_busy                   0   +--  i-s----    0
+   1: continue_action            0   +--  i-s----    1
+   2: eval_function              0   +--  i-s----    2
+   3: interrupt_me               0   +--  i-s----    3
+   4: query_override             0   +m-  i-s----    4
+   5: run_override               0   +m-  i-s----    5
+   6: query_busy                 0   +m-  i-s----    6
+   7: is_busy                    0   +m-  i-s----    7
+   8: add_busy                   0   +--  i-s----    8
+   9: delete_busy                0   +--  i-s----    9
+  10: set_override               0   +m-  i-s----   10
+  11: delete_override            0   +m-  i-s----   11
+  12: start_call_out             0   +--  i-s----   12
+  13: start_busy                 0   +--  i-s---v   13
+  14: delete_temp                0   +--  i-s-a--  232
+  15: delete                     0   +--  i-s-a--  234
+  16: query_last_input           0   +--  i-s----   16
+  17: name                       0   +--  i-s-a-v  323
+  18: id                         0   +--  i-s-a--  324
+  19: query                      0   +--  i-s-a-v  235
+  20: short                      0   +--  i-s-a-v  408
+  21: query_temp                 0   +--  i-s-a-v  236
+  22: set_temp                   0   +--  i-s-a--  237
+  23: set                        4   +--  --s-a--              2       0
+  24: add                        0   +--  i-s-a--  239
+  25: add_temp                   0   +--  i-s-a--  240
+  26: is_waiting_command         0   +--  i-s-a--  260
+  27: query_orginal_input        0   +--  i-s----   27
+  28: is_direct_command          0   +--  i-s----   28
+  29: query_entire_dbase         0   +--  i-s-a--  242
+  30: query_entire_temp_dbase       0   +--  i-s-a--  243
+  31: start_log                  0   +--  i-s-a--  263
+  32: is_loging_now              0   +--  i-s-a--  265
+  33: end_log                    0   +--  i-s-a--  266
+  34: log_message                0   +--  i-s-a--  267
+  35: clear_written              0   +--  i-s-a--  268
+  36: write_prompt               0   +--  i-s-a--  269
+  37: receive_snoop              0   +--  i-s-a--  270
+  38: log_command                0   +--  i-s-a--  271
+  39: set_alias                  0   +--  i-s----   39
+  40: query_all_alias            0   +--  i-s----   40
+  41: process_input              0   +--  i-s----   41
+  42: long                       0   +--  i-s-a-v  339
+  43: set_vector                 0   +--  i-spa--  416
+  44: set_temp_vector            0   +--  i-spa--  417
+  45: receive_message            0   +--  i-s-a--  275
+  46: delete_temp                0   +--  i-s-a--  232
+  47: delete                     0   +--  i-s-a--  234
+  48: query                      0   +--  i-s-a-v  235
+  49: query_temp                 0   +--  i-s-a-v  236
+  50: set_temp                   0   +--  i-s-a--  237
+  51: set                        4   +--  --s-a--              2       0
+  52: add                        0   +--  i-s-a--  239
+  53: add_temp                   0   +--  i-s-a--  240
+  54: assign_apprentice          0   +--  i-s----   54
+  55: is_apprentice_of           0   +--  i-s----   55
+  56: recruit_apprentice         0   +--  i-s----   56
+  57: query_entire_dbase         0   +--  i-s-a--  242
+  58: query_entire_temp_dbase       0   +--  i-s-a--  243
+  59: create_family              0   +--  i-s----   59
+  60: set_vector                 0   +--  i-spa--  416
+  61: set_temp_vector            0   +--  i-spa--  417
+  62: win                        0   +--  i-s----   62
+  63: delete_temp                0   +--  i-s-a--  232
+  64: delete                     0   +--  i-s-a--  234
+  65: query                      0   +--  i-s-a-v  235
+  66: query_temp                 0   +--  i-s-a-v  236
+  67: set_temp                   0   +--  i-s-a--  237
+  68: meet                       0   +--  i-sp---   68
+  69: set                        4   +--  --s-a--              2       0
+  70: add                        0   +--  i-s-a--  239
+  71: is_fighting                0   +--  i-s---v   71
+  72: add_temp                   0   +--  i-s-a--  240
+  73: query_skill                0   +--  i-s-a-v  350
+  74: query_competitor           0   +--  i-s----   74
+  75: query_skill_mapped         0   +--  i-s-a--  351
+  76: competition_with           0   +--  i-s----   76
+  77: query_skill_prepare        0   +--  i-s-a--  352
+  78: set_default_action         0   +--  i-s----   78
+  79: query_save_skills          0   +--  i-spa--  410
+  80: query_default_action       0   +--  i-s----   80
+  81: query_entire_dbase         0   +--  i-s-a--  242
+  82: query_entire_temp_dbase       0   +--  i-s-a--  243
+  83: remove_all_enemy           0   +--  i-s----   83
+  84: remove_all_killer          0   +--  i-s----   84
+  85: reset_action               0   +--  i-s----   85
+  86: query_override             0   +m-  i-s-a--    4
+  87: run_override               0   +m-  i-s-a--    5
+  88: attack                     0   +--  i-s----   88
+  89: improve_skill              0   +--  i-s-a-v  366
+  90: map_skill                  0   +--  i-s-a-v  367
+  91: query_wprepare             0   +--  i-s-a--  368
+  92: query_enemy                0   +--  i-s----   92
+  93: apply_killer               0   +--  i-s----   93
+  94: update_killer              0   +--  i-s----   94
+  95: fight_ob                   0   +--  i-s----   95
+  96: set_override               0   +m-  i-s-a--   10
+  97: query_want                 0   +--  i-s----   97
+  98: query_killer               0   +--  i-s----   98
+  99: is_killing                 0   +--  i-s---v   99
+ 100: delete_override            0   +m-  i-s-a--   11
+ 101: apply_want                 0   +--  i-s----  101
+ 102: is_want_kill               0   +--  i-s---v  102
+ 103: select_opponent            0   +--  i-s----  103
+ 104: clean_up_enemy             0   +--  i-s----  104
+ 105: remove_enemy               0   +--  i-s----  105
+ 106: remove_killer              0   +--  i-s----  106
+ 107: query_action               0   +--  i-s----  107
+ 108: set_action                 0   +--  i-s----  108
+ 109: kill_ob                    0   +--  i-s----  109
+ 110: remove_all_want            0   +--  i-s----  110
+ 111: want_kill                  0   +--  i-s----  111
+ 112: set_competitor             0   +--  i-s----  112
+ 113: lost                       0   +--  i-s----  113
+ 114: query_skills               0   +--  i-s-a--  371
+ 115: start_busy                 0   +--  i-s-a-v   13
+ 116: set_vector                 0   +--  i-spa--  416
+ 117: set_temp_vector            0   +--  i-spa--  417
+ 118: init                       0   +--  i-s----  118
+ 119: delete_temp                0   +--  i-s-a--  232
+ 120: delete                     0   +--  i-s-a--  234
+ 121: query                      0   +--  i-s-a-v  235
+ 122: query_temp                 0   +--  i-s-a-v  236
+ 123: set_temp                   0   +--  i-s-a--  237
+ 124: set                        4   +--  --s-a--              2       0
+ 125: add                        0   +--  i-s-a--  239
+ 126: add_temp                   0   +--  i-s-a--  240
+ 127: query_skill                0   +--  i-s-a-v  350
+ 128: query_skill_mapped         0   +--  i-s-a--  351
+ 129: query_skill_prepare        0   +--  i-s-a--  352
+ 130: query_save_skills          0   +--  i-spa--  410
+ 131: query_entire_dbase         0   +--  i-s-a--  242
+ 132: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 133: query_str                  0   +--  i-s----  133
+ 134: query_con                  0   +--  i-s----  134
+ 135: query_per                  0   +--  i-s----  135
+ 136: query_dex                  0   +--  i-s----  136
+ 137: improve_skill              0   +--  i-s-a-v  366
+ 138: map_skill                  0   +--  i-s-a-v  367
+ 139: query_wprepare             0   +--  i-s-a--  368
+ 140: query_skills               0   +--  i-s-a--  371
+ 141: query_int                  0   +--  i-s----  141
+ 142: set_vector                 0   +--  i-spa--  416
+ 143: set_temp_vector            0   +--  i-spa--  417
+ 144: delete_temp                0   +--  i-s-a--  232
+ 145: delete                     0   +--  i-s-a--  234
+ 146: query                      0   +--  i-s-a-v  235
+ 147: query_temp                 0   +--  i-s-a-v  236
+ 148: set_temp                   0   +--  i-s-a--  237
+ 149: set                        4   +--  --s-a--              2       0
+ 150: add                        0   +--  i-s-a--  239
+ 151: add_temp                   0   +--  i-s-a--  240
+ 152: find_command               0   +--  i-s----  152
+ 153: remove_leading_space       0   +--  i-s----  153
+ 154: query_entire_dbase         0   +--  i-s-a--  242
+ 155: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 156: query_commands             0   +--  i-s----  156
+ 157: force_me                   0   +--  i-s----  157
+ 158: enable_player              0   +m-  i-s----  158
+ 159: set_vector                 0   +--  i-spa--  416
+ 160: set_temp_vector            0   +--  i-spa--  417
+ 161: set_path                   0   +m-  i-s----  161
+ 162: command_hook               0   +m-  i-s----  162
+ 163: disable_player             0   +m-  i-s----  163
+ 164: query_path                 0   +--  i-s----  164
+ 165: delete_temp                0   +--  i-s-a--  232
+ 166: delete                     0   +--  i-s-a--  234
+ 167: query                      0   +--  i-s-a-v  235
+ 168: query_temp                 0   +--  i-s-a-v  236
+ 169: set_temp                   0   +--  i-s-a--  237
+ 170: set                        4   +--  --s-a--              2       0
+ 171: add                        0   +--  i-s-a--  239
+ 172: add_temp                   0   +--  i-s-a--  240
+ 173: query_last_applyer_name       0   +--  i-s----  173
+ 174: query_last_applyer_id       0   +--  i-s----  174
+ 175: dispel_condition           0   +m-  i-s----  175
+ 176: query_last_applyer         0   +m-  i-s----  176
+ 177: update_condition           0   +m-  i-s----  177
+ 178: query_condition_name       0   +m-  i-s----  178
+ 179: query_entire_dbase         0   +--  i-s-a--  242
+ 180: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 181: query_condition            0   +m-  i-s----  181
+ 182: apply_condition            0   +m-  i-s----  182
+ 183: clear_condition            0   +m-  i-s----  183
+ 184: set_vector                 0   +--  i-spa--  416
+ 185: set_temp_vector            0   +--  i-spa--  417
+ 186: update_cd                  0   +--  i-s----  186
+ 187: affect_by                  0   +m-  i-s----  187
+ 188: get_cnd_object             0   ---  i-s----  188
+ 189: delete_temp                0   +--  i-s-a--  232
+ 190: delete                     0   +--  i-s-a--  234
+ 191: query                      0   +--  i-s-a-v  235
+ 192: query_temp                 0   +--  i-s-a-v  236
+ 193: set_temp                   0   +--  i-s-a--  237
+ 194: die                        3   +--  --s-a-v              1       0
+ 195: set                        4   +--  --s-a--              2       0
+ 196: add                        0   +--  i-s-a--  239
+ 197: add_temp                   0   +--  i-s-a--  240
+ 198: query_last_applyer_name       0   +--  i-s-a--  173
+ 199: query_last_damage_name       0   +--  i-s----  199
+ 200: query_last_applyer_id       0   +--  i-s-a--  174
+ 201: query_defeated_by          0   +--  i-s----  201
+ 202: query_defeated_by_who       0   +--  i-s----  202
+ 203: query_entire_dbase         0   +--  i-s-a--  242
+ 204: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 205: max_water_capacity         0   +--  i-s----  205
+ 206: max_food_capacity          0   +--  i-s----  206
+ 207: move                       0   +--  i-s-a-v  311
+ 208: unconcious                 0   +--  i-s----  208
+ 209: is_ghost                   0   +--  i-s----  209
+ 210: reincarnate                0   +--  i-s----  210
+ 211: query_last_damage_from       0   +--  i-s----  211
+ 212: query_override             0   +m-  i-s-a--    4
+ 213: run_override               0   +m-  i-s-a--    5
+ 214: dps_count                  0   +--  i-s----  214
+ 215: remove_dp                  0   +--  i-s----  215
+ 216: record_dp                  0   +--  i-s----  216
+ 217: heal_up                    0   +--  i-s----  217
+ 218: set_override               0   +m-  i-s-a--   10
+ 219: revive                     0   +--  i-s---v  219
+ 220: delete_override            0   +m-  i-s-a--   11
+ 221: receive_damage             0   +--  i-s---v  221
+ 222: query_weight               0   +m-  i-s-a--  318
+ 223: start_busy                 0   +--  i-s-a-v   13
+ 224: set_vector                 0   +--  i-spa--  416
+ 225: set_temp_vector            0   +--  i-spa--  417
+ 226: receive_wound              0   +--  i-s---v  226
+ 227: receive_heal               0   +--  i-s----  227
+ 228: receive_curing             0   +--  i-s----  228
+ 229: _query                     0   +m-  i-s----  229
+ 230: _delete                    0   +m-  i-s----  230
+ 231: _set                       0   +m-  i-s----  231
+ 232: delete_temp                0   +--  i-s----  232
+ 233: set_dbase                  0   +m-  i-s----  233
+ 234: delete                     0   +--  i-s----  234
+ 235: query                      0   +--  i-s---v  235
+ 236: query_temp                 0   +--  i-s---v  236
+ 237: set_temp                   0   +--  i-s----  237
+ 238: set                        4   +--  --s-a--              2       0
+ 239: add                        0   +--  i-s----  239
+ 240: add_temp                   0   +--  i-s----  240
+ 241: set_default_object         0   +--  i-s----  241
+ 242: query_entire_dbase         0   +--  i-s----  242
+ 243: query_entire_temp_dbase       0   +--  i-s----  243
+ 244: query_default_object       0   +--  i-s----  244
+ 245: input_line                 0   +--  i-s----  245
+ 246: edit                       0   +--  i-s----  246
+ 247: pay_money                  0   +--  i-s----  247
+ 248: can_afford                 0   +--  i-s----  248
+ 249: delete_temp                0   +--  i-s-a--  232
+ 250: delete                     0   +--  i-s-a--  234
+ 251: name                       0   +--  i-s-a-v  323
+ 252: id                         0   +--  i-s-a--  324
+ 253: query                      0   +--  i-s-a-v  235
+ 254: short                      0   +--  i-s-a-v  408
+ 255: query_temp                 0   +--  i-s-a-v  236
+ 256: set_temp                   0   +--  i-s-a--  237
+ 257: set                        4   +--  --s-a--              2       0
+ 258: add                        0   +--  i-s-a--  239
+ 259: add_temp                   0   +--  i-s-a--  240
+ 260: is_waiting_command         0   +--  i-s----  260
+ 261: query_entire_dbase         0   +--  i-s-a--  242
+ 262: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 263: start_log                  0   +--  i-s----  263
+ 264: prompt                     0   +--  i-s----  264
+ 265: is_loging_now              0   +--  i-s----  265
+ 266: end_log                    0   +--  i-s----  266
+ 267: log_message                0   +--  i-s----  267
+ 268: clear_written              0   +--  i-s----  268
+ 269: write_prompt               0   +--  i-s----  269
+ 270: receive_snoop              0   +--  i-s----  270
+ 271: log_command                0   +--  i-s----  271
+ 272: long                       0   +--  i-s-a-v  339
+ 273: set_vector                 0   +--  i-spa--  416
+ 274: set_temp_vector            0   +--  i-spa--  417
+ 275: receive_message            0   +--  i-s----  275
+ 276: delete_temp                0   +--  i-s-a--  232
+ 277: delete                     0   +--  i-s-a--  234
+ 278: query                      0   +--  i-s-a-v  235
+ 279: query_temp                 0   +--  i-s-a-v  236
+ 280: set_temp                   0   +--  i-s-a--  237
+ 281: set                        4   +--  --s-a--              2       0
+ 282: add                        0   +--  i-s-a--  239
+ 283: add_temp                   0   +--  i-s-a--  240
+ 284: query_entire_dbase         0   +--  i-s-a--  242
+ 285: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 286: zj_more                    0   +--  i-s----  286
+ 287: more                       0   +--  i-s----  287
+ 288: start_more                 0   +--  i-s----  288
+ 289: start_more_file            0   +--  i-s----  289
+ 290: more_file                  0   +--  i-s----  290
+ 291: s_write                    0   +--  i-s----  291
+ 292: set_vector                 0   +--  i-spa--  416
+ 293: set_temp_vector            0   +--  i-spa--  417
+ 294: delete_temp                0   +--  i-s-a--  232
+ 295: delete                     0   +--  i-s-a--  234
+ 296: remove                     0   +--  i-s----  296
+ 297: query                      0   +--  i-s-a-v  235
+ 298: query_temp                 0   +--  i-s-a-v  236
+ 299: set_temp                   0   +--  i-s-a--  237
+ 300: set                        4   +--  --s-a--              2       0
+ 301: add                        0   +--  i-s-a--  239
+ 302: add_temp                   0   +--  i-s-a--  240
+ 303: set_max_encumbrance        0   +m-  i-s----  303
+ 304: over_encumbranced          0   +m-  i-s----  304
+ 305: query_encumbrance          0   +m-  i-s----  305
+ 306: move_or_destruct           0   +--  i-s----  306
+ 307: over_encumbrance           0   +--  i-s----  307
+ 308: query_entire_dbase         0   +--  i-s-a--  242
+ 309: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 310: query_max_encumbrance       0   +m-  i-s----  310
+ 311: move                       0   +--  i-s---v  311
+ 312: weight                     0   +m-  i-s----  312
+ 313: add_encumbrance            0   +m-  i-s----  313
+ 314: info                       0   +--  i-s----  314
+ 315: set_weight                 0   +m-  i-s----  315
+ 316: set_magic_move             0   +m-  i-s----  316
+ 317: is_magic_move              0   +m-  i-s----  317
+ 318: query_weight               0   +m-  i-s----  318
+ 319: set_vector                 0   +--  i-spa--  416
+ 320: set_temp_vector            0   +--  i-spa--  417
+ 321: delete_temp                0   +--  i-s-a--  232
+ 322: delete                     0   +--  i-s-a--  234
+ 323: name                       0   +--  i-s---v  323
+ 324: id                         0   +--  i-s----  324
+ 325: query                      0   +--  i-s-a-v  235
+ 326: short                      0   +--  i-s-a-v  408
+ 327: query_temp                 0   +--  i-s-a-v  236
+ 328: set_temp                   0   +--  i-s-a--  237
+ 329: set                        4   +--  --s-a--              2       0
+ 330: add                        0   +--  i-s-a--  239
+ 331: add_temp                   0   +--  i-s-a--  240
+ 332: query_last_applyer_name       0   +--  i-s-a--  173
+ 333: query_last_applyer_id       0   +--  i-s-a--  174
+ 334: parse_command_id_list       0   +--  i-s----  334
+ 335: query_entire_dbase         0   +--  i-s-a--  242
+ 336: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 337: set_name                   0   +--  i-s---v  337
+ 338: real_id                    0   +--  i-s----  338
+ 339: long                       0   +--  i-s---v  339
+ 340: set_vector                 0   +--  i-spa--  416
+ 341: set_temp_vector            0   +--  i-spa--  417
+ 342: delete_temp                0   +--  i-s-a--  232
+ 343: delete                     0   +--  i-s-a--  234
+ 344: query                      0   +--  i-s-a-v  235
+ 345: query_temp                 0   +--  i-s-a-v  236
+ 346: set_temp                   0   +--  i-s-a--  237
+ 347: set                        4   +--  --s-a--              2       0
+ 348: add                        0   +--  i-s-a--  239
+ 349: add_temp                   0   +--  i-s-a--  240
+ 350: query_skill                0   +--  i-s---v  350
+ 351: query_skill_mapped         0   +--  i-s----  351
+ 352: query_skill_prepare        0   +--  i-s----  352
+ 353: skill_expell_penalty       0   +--  i-s----  353
+ 354: query_skill_prepared       0   +--  i-s----  354
+ 355: skill_death_penalty        0   +--  i-s----  355
+ 356: query_entire_dbase         0   +--  i-s-a--  242
+ 357: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 358: can_improve_skill          0   +--  i-s----  358
+ 359: query_learned              0   +--  i-s----  359
+ 360: prepare_skill              0   +--  i-s---v  360
+ 361: prepare_wskill             0   +--  i-s---v  361
+ 362: query_wprepared            0   +--  i-s----  362
+ 363: delete_skill               0   +--  i-s----  363
+ 364: clear_all_skill            0   +--  i-s----  364
+ 365: add_skill                  0   +--  i-s----  365
+ 366: improve_skill              0   +--  i-s---v  366
+ 367: map_skill                  0   +--  i-s---v  367
+ 368: query_wprepare             0   +--  i-s----  368
+ 369: set_skill                  0   +--  i-s----  369
+ 370: query_skill_map            0   +--  i-s----  370
+ 371: query_skills               0   +--  i-s----  371
+ 372: set_vector                 0   +--  i-spa--  416
+ 373: set_temp_vector            0   +--  i-spa--  417
+ 374: delete_temp                0   +--  i-s-a--  232
+ 375: delete                     0   +--  i-s-a--  234
+ 376: query                      0   +--  i-s-a-v  235
+ 377: query_temp                 0   +--  i-s-a-v  236
+ 378: set_temp                   0   +--  i-s-a--  237
+ 379: set                        4   +--  --s-a--              2       0
+ 380: add                        0   +--  i-s-a--  239
+ 381: add_temp                   0   +--  i-s-a--  240
+ 382: have_team_member           0   +--  i-s----  382
+ 383: query_entire_dbase         0   +--  i-s-a--  242
+ 384: query_entire_temp_dbase       0   +--  i-s-a--  243
+ 385: follow_me                  0   +--  i-s----  385
+ 386: fly_me                     0   +--  i-s----  386
+ 387: is_team_leader             0   +--  i-s----  387
+ 388: flyto_me                   0   +--  i-s----  388
+ 389: set_team_leader            0   +--  i-s----  389
+ 390: recall_me                  0   +--  i-s----  390
+ 391: add_team_member            0   +--  i-s----  391
+ 392: query_team                 0   +--  i-s----  392
+ 393: set_team                   0   +--  i-s----  393
+ 394: set_leader                 0   +--  i-s----  394
+ 395: dismiss_team               0   +--  i-s---v  395
+ 396: query_leader               0   +--  i-s----  396
+ 397: follow_path                0   +--  i-s----  397
+ 398: set_vector                 0   +--  i-spa--  416
+ 399: set_temp_vector            0   +--  i-spa--  417
+ 400: dis_count                  0   +--  i-s----  400
+ 401: dis_lvl                    0   +--  i-s----  401
+ 402: suit_dis                   0   +--  i-s----  402
+ 403: sum_eff                    0   +--  i-s----  403
+ 404: suit                       0   +--  i-s----  404
+ 405: is_character               0   +--  i-s----  405
+ 406: heart_beat                 0   +--  i-s----  406
+ 407: visible                    0   +--  i-s----  407
+ 408: short                      0   +--  i-s---v  408
+ 409: create                     5   +--  --s-a--              0       0
+ 410: query_save_skills          0   +--  i-sp---  410
+ 411: not_keep_heat_beat         0   +--  i-s----  411
+ 412: setup                     27   +--  --s-a--              0       0
+ 413: set_short_desc             0   +--  i-s----  413
+ 414: is_good                    0   +--  i-s----  414
+ 415: is_bad                     0   +--  i-s----  415
+ 416: set_vector                 0   +--  i-sp---  416
+ 417: set_temp_vector            0   +--  i-sp---  417
+ 418: is_not_bad                 0   +--  i-s----  418
+ 419: keep_heart_beat            0   +--  i-s----  419
+ 420: is_not_good                0   +--  i-s----  420
+ 421: hit_ob                     0   +--  i-s----  421
+ 422: clean_up_autoload          1   +--  i-s----    0
+ 423: query_autoload_info        1   +--  i-s----    1
+ 424: set_autoload_info          1   +--  i-s----    2
+ 425: restore_autoload           1   +--  i-s----    3
+ 426: save_autoload              1   +--  i-s----    4
+ 427: save                       1   +--  --s-a--              0       1
+ 428: restore                   24   +--  --s-a--              0       2
+ 429: ban_say                    0   +--  --s----              1       1
+ 430: save                       1   +--  --s----              0       1
+ 431: is_player                  2   +--  --s----              0       0
+ 432: die                        3   +--  --s---v              1       0
+ 433: set                        4   +--  --s----              2       0
+ 434: create                     5   +--  --s----              0       0
+ 435: is_attach_system           6   +--  --s----              0       0
+ 436: craze_of_defeated          7   +--  --s----              1       0
+ 437: query_time_to_leave        8   +--  --s----              0       0
+ 438: update_in_prison           9   +--  --s----              0       1
+ 439: query_current_neili_limit      10   +--  --s----              0       3
+ 440: cancle_die_protect        11   +--  --s----              1       0
+ 441: query_neili_limit         12   +--  --s----              0       8
+ 442: query_current_jingli_limit      13   +--  --s----              0       0
+ 443: can_improve_neili         14   +--  --s----              0       0
+ 444: query_jingli_limit        15   +--  --s----              0       1
+ 445: can_improve_jingli        16   +--  --s----              0       0
+ 446: query_experience_limit      17   +--  --s----              0       1
+ 447: query_gain_break          18   +--  --s----              0       4
+ 448: query_potential_limit      19   +--  --s----              0       1
+ 449: query_gain_damage         20   +--  --s----              0       5
+ 450: query_gain_armor          21   +--  --s----              0       4
+ 451: reconnect                 22   +--  --s----              0       0
+ 452: query_save_file           23   +--  --s----              0       1
+ 453: restore                   24   +--  --s----              0       2
+ 454: query_prison              25   +--  --s----              0       0
+ 455: is_in_prison              26   +--  --s----              0       0
+ 456: setup                     27   +--  --s----              0       0
+ 457: is_admin                  28   +--  --s----              0       0
+ 458: improve_experience        29   +--  --s----              1       1
+ 459: improve_potential         30   +--  --s----              1       1
+ 460: query_info                31   +--  --s----              0       7
+ 461: is_stay_in_room           32   +--  --s----              0       0
+ 462: craze_of_die              33   +--  --s----              1       0
+ 463: detach_system             34   +--  --s----              0       0
+ 464: reject_command            35   +--  --s----              0       1
+ 465: reset                     36   +--  --s----              0       1
+ 466: terminal_type             37   +--  --s----              1       0
+ 467: net_dead                  38   ---  --s----              0       1
+ 468: improve_craze             39   +--  --s----              1       1
+ 469: query_gain_qi             40   +--  --s----              0       3
+ 470: auto_cmd                  41   +--  --s----              0       5
+ 471: auto_zhandou              42   +--  --s----              0       6
+ 472: update_age                43   +--  --s----              0       4
+ 473: user_dump                 44   +--  --s----              1       0
+ 474: is_net_dead               45   +--  --s----              0       0
+ 475: calc_sec_id               46   +--  --s----              1       6
+ 476: set_admin                 47   +--  --s----              0       0
+ 477: is_user                   48   +--  --s----              0       0
+ 478: die_protect               49   +--  --s----              1       1
+ 479: accept_fight              50   +--  --s----              1       0
+ 480: accept_touxi              51   +--  --s----              1       0
+ 481: improve_neili             52   +--  --s----              1       1
+ 482: improve_jingli            53   +--  --s----              1       1
+ 483: accept_hit                54   +--  --s----              1       0
+ 484: accept_ansuan             55   +--  --s----              1       0
+ 485: accept_kill               56   +--  --s----              1       0
+ 486: attach_system             57   +--  --s----              0       0
+ 487: ban_say_until             58   +--  --s----              2       1
+ 488: get_into_prison           59   +--  --s----              3       1
+ 489: query_max_craze           60   +--  --s----              0       0
+ 490: is_most_craze             61   +--  --s----              0       0
+ 491: is_hating                 62   +--  --s----              1       0
+ 492: leave_prison              63   +--  --s----              2       1
+ 493: permit_say                64   +--  --s----              1       0
+ 494: cost_craze                65   +--  --s----              1       0
+ 495: query_craze               66   +--  --s----              0       0
+ 496: is_vip                    67   +--  --s----              0       0
+ 497: edit_file                 68   +--  --s----              1       0
+ 498: command_verb              69   +--  --s----              0       0
+ 499: craze_defeated            70   +--  --s----              1       0
+ 500: is_brother                71   +--  --s----              1       1
+ 501: #global_init#             72   ---  --s----              0       0
+
+;;; inherit/char/char.c
+
+VARIABLES:
+   0: public nosave int next_beat
+   1: public nosave int keep_beat_flag
+   2: public nosave string short_desc
+STRINGS:
+   0: inherit/char/char.c
+   1: include/globals.h
+   2: include/ansi.h
+   3: include/zjmud.h
+   4: include/getconfig.h
+   5: include/runtime_config.h
+   6: include/tomud.h
+   7: include/action.h
+   8: include/command.h
+   9: include/condition.h
+  10: include/dbase.h
+  11: include/move.h
+  12: include/name.h
+  13: include/skill.h
+  14: include/team.h
+  15: include/user.h
+  16: shen
+  17: /adm/daemons/chard
+  18: setup_char
+  19: qi
+  20: jing
+  21: /cmds/usr/hp1
+  22: main
+  23: auto_cmd
+  24: update_cd
+  25: zdjb/def
+  26: query
+  27: is_fighting
+  28: is_busy
+  29: zdjb
+  30: query_temp
+  31: set_temp
+  32: /cmds/usr/zdjb
+  33: auto_zhandou
+  34: online_time
+  35: add
+  36: kas_time
+  37: env/wimpy
+  38: gain/max_qi
+  39: max_qi
+  40: max_jing
+  41: env/wimpy_apply
+  42: can_apply_for_wimpy
+  43: apply_for_wimpy
+  44: /cmds/std/go
+  45: do_flee
+  46: zaohua dan
+  47: neili
+  48: max_neili
+  49: medicine
+  50: env/sign2
+  51: 生生造化丹
+  52: query_enemy
+  53: use zaohua dan
+  54: force_me
+  55: huxin dan
+  56: combat_exp
+  57: use huxin dan
+  58: fight_team
+  59: is_comb_ob
+  60: scan
+  61: last_qi
+  62: last_eff_qi
+  63: eff_qi
+  64: last_max_qi
+  65: vision
+  66: 022look 
+  67: $zj#
+  68: :
+  69: query_gain_qi
+  70: \n
+  71: guibing_room
+  72: db_exp2
+  73: query_condition
+  74: [1;33m受玄灵丹效果加成�
+  75: db_exp
+  76: [1;36m受天灵丹效果加成�
+  77: improve_potential
+  78: [1;33m贵宾收益增加：[2;
+  79: 点
+  80: 
+  81: [1;37m
+  82: 经验
+  83: [2;37;0m
+  84: [1;32m
+  85: 和
+  86: [1;35m
+  87: 潜能
+  88: 。
+  89: [2;37;0m\n
+  90: close_room
+  91: 你绞尽脑汁，思索过去�
+  92: 点经验和
+  93: 点潜能。\n
+  94: 你瞑思苦想，仔细体会�
+  95: 你用手比划着，静心研�
+  96: not_living
+  97: chat_msg
+  98: update_age
+  99: last_save
+ 100: save
+ 101: [1;31m【数据保护】由于�
+ 102: /adm/daemons/topd
+ 103: map_user
+ 104: food
+ 105: water
+ 106: is_chat_room
+ 107: hunger
+ 108: env
+ 109: keep_idle
+ 110: user_dump
+ 111: [2;37;0m
+ 112: armor/hands
+ 113: hit_ob
+ 114: daub
+ 115: /adm/daemons/combatd
+ 116: hit_with_poison
+ 117: is_character
+ 118: is_ghost
+ 119: env/invisible
+ 120: apply/short
+ 121: name
+ 122: (
+ 123: real_id
+ 124: )
+ 125: title
+ 126: nickname
+ 127: 「
+ 128: 」
+ 129:  
+ 130: [1;34m(鬼气) [2;37;0m
+ 131: is_net_dead
+ 132: doing
+ 133: breakup
+ 134: [1;33m <闭关中>[2;37;0m
+ 135: closed
+ 136: [1;33m <修炼中>[2;37;0m
+ 137: guaji
+ 138: [1;31m <挂机中>[2;37;0m
+ 139: [1;32m <闭关中>[2;37;0m
+ 140: [1;32m <断线中>[2;37;0m
+ 141: [1;36m <输入文字中>[2;37;
+ 142: disable_type
+ 143: [1;31m
+ 144: [1;33m <编辑档案中>[2;37;
+ 145: [1;35m <发呆中>[2;37;0m
+PROGRAM:
+	0000: 15 04 177 01 01 47 16 46 14 16 44 235 00 01 08 244 
+	0010: 01 51 46 14 16 44 235 00 01 08 12 254 53 46 14 16 
+	0020: 44 235 00 01 08 244 01 53 46 14 16 44 235 00 01 08 
+	0030: 12 254 51 46 03 136 00 04 176 01 04 177 01 01 16 04 
+	0040: 255 00 03 240 00 11 10 99 68 47 00 97 44 158 00 00 
+	0050: 01 02 02 17 18 03 136 00 07 134 00 03 01 47 16 04 
+	0060: 255 00 16 68 48 00 97 47 15 68 48 00 97 47 03 136 
+	0070: 00 98 06 63 06 24 03 00 47 44 242 00 00 98 04 02 
+	0080: 02 19 196 71 15 51 37 09 00 02 02 20 196 71 15 51 
+	0090: 23 39 00 63 06 04 174 00 24 10 00 44 194 00 00 01 
+	00a0: 25 07 00 44 208 00 00 01 63 06 109 37 08 00 63 06 
+	00b0: 04 174 00 109 23 03 00 47 02 03 21 22 198 07 134 00 
+	00c0: 03 01 02 02 198 23 07 134 00 02 01 02 02 198 24 07 
+	00d0: 134 00 02 01 02 03 198 26 25 07 134 00 03 38 35 00 
+	00e0: 02 02 198 27 07 134 00 02 38 24 00 02 02 198 28 07 
+	00f0: 134 00 02 109 38 12 00 02 03 198 30 29 07 134 00 03 
+	0100: 109 23 23 00 02 04 198 31 29 65 07 134 00 04 01 02 
+	0110: 03 32 33 198 07 134 00 03 01 63 06 113 63 00 01 23 
+	0120: 25 00 02 04 198 35 34 66 07 134 00 04 01 02 03 198 
+	0130: 35 36 12 01 07 134 00 04 01 44 07 00 00 23 10 00 
+	0140: 44 01 00 00 01 25 174 01 63 06 04 174 00 23 166 01 
+	0150: 44 71 00 00 38 72 00 14 37 44 235 00 01 64 02 95 
+	0160: 04 204 00 38 57 00 02 02 194 64 53 38 49 00 02 02 
+	0170: 19 196 71 11 100 101 02 03 198 26 38 07 134 00 03 02 
+	0180: 02 39 196 71 99 102 63 02 50 37 19 00 02 02 20 196 
+	0190: 71 11 100 101 02 02 40 196 71 102 63 02 50 23 73 00 
+	01a0: 14 41 44 235 00 01 64 09 95 04 207 00 38 28 00 02 
+	01b0: 02 201 198 113 21 00 02 64 10 95 04 211 00 38 11 00 
+	01c0: 02 03 202 26 42 07 134 00 03 23 17 00 02 02 202 43 
+	01d0: 03 136 00 07 134 00 03 01 25 14 00 02 02 44 45 03 
+	01e0: 136 00 07 134 00 03 01 02 02 46 198 113 21 00 02 64 
+	01f0: 11 95 04 211 00 38 84 00 02 02 47 196 71 08 244 01 
+	0200: 51 38 72 00 02 02 48 196 71 08 244 01 53 38 60 00 
+	0210: 14 49 44 181 00 01 109 38 50 00 02 03 198 26 50 07 
+	0220: 134 00 03 14 51 48 38 35 00 02 02 198 27 07 134 00 
+	0230: 02 109 37 23 00 02 02 198 52 07 134 00 02 15 112 04 
+	0240: 63 00 07 43 01 02 04 144 00 109 23 12 00 02 03 198 
+	0250: 54 53 07 134 00 03 01 02 02 55 198 113 21 00 02 04 
+	0260: 211 00 38 91 00 02 02 47 196 71 08 244 01 51 38 79 
+	0270: 00 02 02 48 196 71 08 244 01 53 38 67 00 14 49 44 
+	0280: 181 00 01 109 38 57 00 02 03 198 26 56 07 134 00 03 
+	0290: 09 129 132 30 00 00 00 00 00 51 38 35 00 02 02 198 
+	02a0: 27 07 134 00 02 109 37 23 00 02 02 198 52 07 134 00 
+	02b0: 02 15 112 04 63 00 07 43 01 02 04 144 00 109 23 12 
+	02c0: 00 02 03 198 54 57 07 134 00 03 01 02 03 198 30 58 
+	02d0: 07 134 00 03 109 38 22 00 63 06 04 161 00 38 14 00 
+	02e0: 63 06 04 161 00 14 59 07 134 00 02 109 23 07 00 44 
+	02f0: 88 00 00 01 63 06 113 63 00 01 64 08 95 24 17 00 
+	0300: 63 06 24 03 00 47 02 02 198 60 07 134 00 02 01 63 
+	0310: 06 24 03 00 47 14 61 44 236 00 01 14 19 44 235 00 
+	0320: 01 49 37 31 00 14 62 44 236 00 01 14 63 44 235 00 
+	0330: 01 49 37 15 00 14 64 44 236 00 01 14 39 44 235 00 
+	0340: 01 49 23 93 00 63 06 04 161 00 23 85 00 14 65 14 
+	0350: 66 63 06 04 146 00 99 14 67 99 02 02 19 196 71 99 
+	0360: 14 68 99 02 02 63 196 71 99 14 68 99 02 02 39 196 
+	0370: 71 63 06 14 69 07 134 00 02 99 99 14 70 99 63 06 
+	0380: 04 161 00 04 162 00 15 112 05 01 06 00 63 00 04 15 
+	0390: 01 46 07 43 01 02 63 06 17 01 00 113 33 00 04 01 
+	03a0: 02 02 61 19 44 235 00 01 44 237 00 02 01 02 02 62 
+	03b0: 63 44 235 00 01 44 237 00 02 01 14 64 14 39 44 235 
+	03c0: 00 01 44 237 00 02 01 03 240 00 64 00 95 67 47 00 
+	03d0: 20 06 00 47 25 11 00 02 02 192 74 99 68 47 00 97 
+	03e0: 63 08 38 23 00 63 06 04 161 00 38 15 00 63 06 04 
+	03f0: 161 00 14 26 14 71 07 134 00 03 23 193 00 11 30 04 
+	0400: 158 00 11 30 99 98 12 11 30 04 158 00 11 10 99 98 
+	0410: 13 63 06 14 73 14 72 07 134 00 03 23 26 00 11 03 
+	0420: 64 12 92 01 11 03 64 13 92 01 63 06 14 74 113 40 
+	0430: 00 02 01 25 36 00 63 06 14 73 14 75 07 134 00 03 
+	0440: 23 23 00 11 02 64 12 92 01 11 02 64 13 92 01 63 
+	0450: 06 14 76 113 40 00 02 01 02 04 198 35 56 205 07 134 
+	0460: 00 04 01 63 06 14 77 63 12 07 134 00 03 98 12 63 
+	0470: 06 04 15 01 23 68 00 63 06 14 78 63 13 99 14 79 
+	0480: 99 14 80 99 14 81 99 14 82 99 14 80 99 14 83 99 
+	0490: 14 80 99 14 84 99 14 85 99 63 12 99 14 79 99 14 
+	04a0: 80 99 14 86 99 14 87 99 14 80 99 14 84 99 14 88 
+	04b0: 99 14 89 99 113 40 00 02 01 25 246 00 63 08 38 23 
+	04c0: 00 63 06 04 161 00 38 15 00 63 06 04 161 00 14 26 
+	04d0: 14 90 07 134 00 03 23 217 00 11 10 04 158 00 98 14 
+	04e0: 11 10 04 158 00 98 15 63 06 14 73 14 72 07 134 00 
+	04f0: 03 23 26 00 11 03 64 14 92 01 11 03 64 15 92 01 
+	0500: 63 06 14 74 113 40 00 02 01 25 36 00 63 06 14 73 
+	0510: 14 75 07 134 00 03 23 23 00 11 02 64 14 92 01 11 
+	0520: 02 64 15 92 01 63 06 14 76 113 40 00 02 01 02 04 
+	0530: 198 35 56 207 07 134 00 04 01 63 06 14 77 63 14 07 
+	0540: 134 00 03 98 14 63 06 04 15 01 23 101 00 02 02 207 
+	0550: 67 20 26 00 63 06 14 91 63 15 99 14 92 99 63 14 
+	0560: 99 14 93 99 113 40 00 02 01 25 70 00 02 02 207 67 
+	0570: 53 38 07 00 02 02 207 70 51 23 26 00 63 06 14 94 
+	0580: 63 15 99 14 92 99 63 14 99 14 93 99 113 40 00 02 
+	0590: 01 25 30 00 02 02 207 73 21 23 00 63 06 14 95 63 
+	05a0: 15 99 14 92 99 63 14 99 14 93 99 113 40 00 02 01 
+	05b0: 14 96 63 04 71 24 08 00 44 177 00 00 98 03 63 06 
+	05c0: 24 03 00 47 02 02 195 66 104 24 08 00 44 217 00 00 
+	05d0: 98 03 60 03 109 38 38 00 63 08 109 38 32 00 67 48 
+	05e0: 00 109 38 25 00 44 71 00 00 109 38 17 00 44 07 00 
+	05f0: 00 109 38 09 00 03 136 00 04 15 01 109 23 64 00 03 
+	0600: 161 00 38 08 00 14 97 44 235 00 01 23 37 00 03 161 
+	0610: 00 04 164 00 98 05 25 09 00 63 05 04 165 00 98 05 
+	0620: 63 05 38 08 00 63 05 04 15 01 109 27 19 00 25 05 
+	0630: 00 15 98 05 63 05 24 06 00 15 04 255 00 63 06 109 
+	0640: 37 05 00 63 08 109 23 03 00 47 63 06 14 98 07 134 
+	0650: 00 02 01 63 06 04 174 00 23 69 00 63 00 14 99 63 
+	0660: 04 71 100 98 01 02 02 193 64 51 37 08 00 63 01 08 
+	0670: 44 01 53 23 42 00 63 06 14 100 07 134 00 02 24 11 
+	0680: 00 63 06 14 101 113 40 00 02 01 14 99 63 00 44 238 
+	0690: 00 02 01 14 102 14 103 63 06 07 134 00 03 01 63 06 
+	06a0: 04 15 01 24 03 00 47 14 104 63 04 71 15 50 37 09 
+	06b0: 00 14 105 63 04 71 15 50 23 39 00 03 161 00 38 22 
+	06c0: 00 03 161 00 14 106 07 134 00 02 109 38 09 00 14 107 
+	06d0: 44 181 00 01 109 23 10 00 14 107 16 44 182 00 02 01 
+	06e0: 63 06 04 249 00 08 176 04 53 38 08 00 63 06 04 26 
+	06f0: 01 109 23 45 00 14 108 63 04 71 04 13 01 109 37 11 
+	0700: 00 14 109 14 108 63 04 71 71 109 23 16 00 63 06 14 
+	0710: 110 11 02 07 134 00 03 01 25 07 00 14 111 04 195 00 
+	0720: 47 14 112 44 236 00 01 64 03 95 23 16 00 63 03 14 
+	0730: 113 02 03 192 193 194 07 134 00 05 46 14 114 44 236 00 
+	0740: 01 04 13 01 24 03 00 47 14 115 14 116 60 00 60 01 
+	0750: 03 136 00 07 134 00 05 46 47 63 00 14 117 07 134 00 
+	0760: 02 24 04 00 16 46 63 00 04 26 01 24 23 00 63 00 
+	0770: 14 118 07 134 00 02 109 37 06 00 44 209 00 00 23 04 
+	0780: 00 16 46 03 136 00 113 61 00 01 98 01 63 01 38 11 
+	0790: 00 02 02 193 192 113 61 00 01 52 23 04 00 16 46 63 
+	07a0: 00 04 26 01 38 12 00 02 02 192 26 14 119 07 134 00 
+	07b0: 03 23 03 00 47 16 46 47 60 00 68 49 00 97 47 03 
+	07c0: 136 00 98 06 63 00 109 38 14 00 14 120 44 236 00 01 
+	07d0: 64 05 95 04 144 00 23 17 00 63 05 04 144 00 16 100 
+	07e0: 63 05 71 98 03 25 104 00 14 121 44 235 00 01 14 122 
+	07f0: 99 03 136 00 14 123 07 134 00 02 99 14 124 99 98 03 
+	0800: 14 125 44 236 00 01 64 01 95 04 207 00 24 10 00 14 
+	0810: 125 44 235 00 01 98 01 14 126 44 235 00 01 64 02 95 
+	0820: 23 30 00 14 127 63 02 99 14 128 99 63 03 99 98 03 
+	0830: 63 01 23 09 00 02 02 193 195 99 98 03 25 17 00 63 
+	0840: 01 23 12 00 63 01 14 129 99 63 03 99 98 03 60 00 
+	0850: 24 21 00 67 49 00 23 12 00 44 67 01 00 67 49 00 
+	0860: 99 98 03 25 05 00 63 03 46 63 06 14 118 07 134 00 
+	0870: 02 23 09 00 14 130 63 03 99 98 03 63 06 14 131 07 
+	0880: 134 00 02 23 118 00 02 02 198 26 14 132 07 134 00 03 
+	0890: 43 31 85 00 105 00 23 00 14 134 64 03 96 25 92 00 
+	08a0: 14 136 64 03 96 25 84 00 02 02 198 26 14 137 07 134 
+	08b0: 00 03 16 21 10 00 14 138 64 03 96 25 39 00 63 06 
+	08c0: 04 161 00 38 15 00 63 06 04 161 00 14 26 14 90 07 
+	08d0: 134 00 03 23 10 00 14 139 64 03 96 25 07 00 14 140 
+	08e0: 64 03 96 25 22 00 168 121 90 162 173 00 00 00 15 00 
+	08f0: 120 127 90 162 173 00 00 00 07 00 03 136 00 04 22 01 
+	0900: 23 07 00 14 141 64 03 96 60 06 04 174 00 109 38 08 
+	0910: 00 14 142 44 235 00 01 23 20 00 14 143 14 142 44 235 
+	0920: 00 01 99 14 80 99 14 83 99 64 03 96 03 136 00 04 
+	0930: 21 01 23 07 00 14 144 64 03 96 03 136 00 04 15 01 
+	0940: 38 11 00 03 136 00 04 249 00 11 120 53 23 07 00 14 
+	0950: 145 64 03 96 60 03 46 47 45 03 57 00 00 01 45 05 
+	0960: 21 00 00 01 45 07 40 00 00 01 45 11 27 00 00 01 
+	0970: 45 13 27 00 00 01 15 68 48 00 97 15 68 49 00 97 
+	0980: 47 
+
+;;; feature/autoload.c
+
+VARIABLES:
+   0: public string * autoload
+STRINGS:
+   0: feature/autoload.c
+   1: include/globals.h
+   2: include/ansi.h
+   3: include/zjmud.h
+   4: include/getconfig.h
+   5: include/runtime_config.h
+   6: include/tomud.h
+   7: hire
+   8: query_temp
+   9: query_autoload
+  10: :
+  11: 
+  12: %s:%s
+  13: .c
+  14: ???
+  15: is_no_clone
+  16: /data/%*s/%s
+  17: 你发现有些东西已经没�
+  18: 你觉得似乎失落了什么�
+  19: autoload
+  20: Fail to autoload %s of %s, error
+  21: name
+  22: query
+  23: id
+  24: The no clone object has existed
+  25: is_not_belong_me
+  26: is_character
+  27: move
+PROGRAM:
+	0000: 15 68 00 00 97 47 03 136 00 04 162 00 98 00 03 136 
+	0010: 00 02 02 08 07 07 134 00 03 64 01 95 04 210 00 23 
+	0020: 13 00 02 02 193 64 17 01 00 100 64 00 96 63 00 04 
+	0030: 144 00 04 220 00 68 00 00 97 15 98 02 15 98 03 25 
+	0040: 63 00 02 02 194 192 71 14 09 07 134 00 02 64 04 95 
+	0050: 24 05 00 25 41 00 02 02 194 192 71 113 26 00 01 63 
+	0060: 03 68 00 00 72 97 63 04 04 207 00 23 14 00 02 02 
+	0070: 10 196 99 63 03 68 00 00 72 96 64 03 54 35 02 02 
+	0080: 02 194 192 04 144 00 29 69 00 15 60 03 16 100 67 00 
+	0090: 00 75 68 00 00 97 47 67 00 00 04 210 00 24 03 00 
+	00a0: 47 15 98 06 15 98 00 25 83 01 02 02 192 128 71 109 
+	00b0: 37 10 00 02 02 192 128 71 14 11 48 23 05 00 25 58 
+	00c0: 01 02 02 192 128 71 14 12 114 02 64 03 97 64 04 97 
+	00d0: 11 02 22 12 00 02 02 192 128 71 98 03 15 98 04 02 
+	00e0: 02 195 13 99 04 227 00 15 21 29 00 39 12 00 02 02 
+	00f0: 195 14 07 134 00 02 01 40 98 05 02 02 195 64 05 197 
+	0100: 00 98 02 25 08 00 15 98 05 15 98 02 63 02 38 11 
+	0110: 00 02 02 194 15 07 134 00 02 109 23 10 00 63 03 07 
+	0120: 139 00 01 98 02 63 05 37 24 00 63 02 109 37 18 00 
+	0130: 02 02 194 15 07 134 00 02 38 07 00 63 02 04 161 00 
+	0140: 23 98 00 63 03 38 11 00 02 02 195 16 114 01 64 07 
+	0150: 97 23 23 00 63 06 23 05 00 25 159 00 64 06 54 14 
+	0160: 17 113 35 00 01 01 25 09 00 14 18 113 35 00 01 01 
+	0170: 02 03 19 20 195 03 136 00 02 02 22 21 07 134 00 03 
+	0180: 03 136 00 02 02 22 23 07 134 00 03 63 02 23 07 00 
+	0190: 14 24 25 04 00 63 05 07 12 01 05 113 00 00 02 01 
+	01a0: 25 88 00 02 02 194 15 07 134 00 02 38 13 00 02 02 
+	01b0: 194 25 03 136 00 07 134 00 03 23 20 00 63 02 04 161 
+	01c0: 00 24 09 00 63 02 113 12 00 01 01 25 45 00 63 02 
+	01d0: 04 174 01 01 02 02 194 26 07 134 00 02 24 15 00 02 
+	01e0: 02 194 27 03 136 00 16 07 134 00 04 01 02 03 194 19 
+	01f0: 196 03 136 00 07 134 00 04 01 35 00 02 02 192 128 04 
+	0200: 144 00 29 89 01 44 00 00 00 01 47 67 00 00 46 60 
+	0210: 00 68 00 00 97 47 
+
+;;; feature/save.c
+
+VARIABLES:
+STRINGS:
+   0: feature/save.c
+   1: include/globals.h
+   2: include/ansi.h
+   3: include/zjmud.h
+   4: include/getconfig.h
+   5: include/runtime_config.h
+   6: include/tomud.h
+   7: query_save_file
+   8: .o
+PROGRAM:
+	0000: 03 136 00 14 07 07 134 00 02 64 00 95 04 207 00 23 
+	0010: 18 00 02 02 192 08 99 113 08 00 01 01 63 00 04 186 
+	0020: 00 46 47 03 136 00 14 07 07 134 00 02 64 00 95 04 
+	0030: 207 00 23 08 00 63 00 04 185 00 46 47 
+
+;;; clone/user/user.c
+
+VARIABLES:
+   0: public nosave int admin_flag
+   1: public nosave int user_cracked
+   2: public nosave int net_dead
+   3: public nosave int last_age_set
+   4: public nosave int user_say
+   5: public nosave int user_command
+   6: public nosave int attach_flag
+   7: public int at_time
+   8: public int ban_to
+   9: public string ban_say_msg
+  10: public nosave string my_defeater_id
+  11: public nosave string my_killer_id
+  12: public nosave int craze
+  13: public string prison
+  14: public int time_to_leave
+STRINGS:
+   0: clone/user/user.c
+   1: include/globals.h
+   2: include/ansi.h
+   3: include/zjmud.h
+   4: include/getconfig.h
+   5: include/runtime_config.h
+   6: include/tomud.h
+   7: include/origin.h
+   8: include/user.h
+   9: include/command.h
+  10: 
+  11: /cmds/usr/passwd
+  12: 使用者物件
+  13: user object
+  14: user
+  15: object
+  16: terminal_type
+  17: system
+  18: 终端机型态设定为 
+  19: 。\n
+  20: potential
+  21: learned_points
+  22: thief
+  23: total_hatred
+  24: xiantian-gong
+  25: quanzhen-xinfa
+  26: force
+  27: /kungfu/skill/xiantian-gong
+  28: valid_learn
+  29: /data/user/%c/%s
+  30: name
+  31: /adm/daemons/named
+  32: change_name
+  33: user_setup
+  34: sec_id
+  35: id
+  36: zjvip/last_vip_set
+  37: zjvip/times
+  38: [31m你的VIP会员时间已到
+  39: mud_age
+  40: is_chat_room
+  41: env/halt_age
+  42: age_modify
+  43: month
+  44: age
+  45: kar
+  46: 时间过得真快，不知不�
+  47: 岁了，今年的运气不知�
+  48: doing
+  49: /adm/daemons/closed
+  50: continue_doing
+  51: close_room
+  52: query
+  53: 断线超过 
+  54:  分钟，自动退出这个世�
+  55: halt
+  56: quit
+  57: /cmds/usr/quit
+  58: force_quit
+  59: learned_idle_force
+  60: $N狂笑三声，道：我终于
+  61: 你经过长时间的发呆，�
+  62: idle-force
+  63: 对不起，您已经发呆超�
+  64:  分钟了，请下次再来。\n
+  65: 一阵风吹来，将发呆中�
+  66: 化为一堆飞灰，消失了�
+  67: remove_interactive
+  68: link_ob
+  69: ip_number
+  70: query_temp
+  71: last_on
+  72: set
+  73: last_from
+  74: save
+  75: user_dump
+  76: 断线了。\n
+  77: /adm/daemons/channeld
+  78: sys
+  79: 断线了。
+  80: do_channel
+  81: vision
+  82: 离线了。\n
+  83: 重新连接成功。\n
+  84: query_skills
+  85: /kungfu/skill/
+  86: .c
+  87: valid_enable
+  88: query_neili_improve
+  89: improve/neili
+  90: breakup
+  91: special_skill/mystery
+  92: con
+  93: family/family_name
+  94: class
+  95: bonze
+  96: 雪山寺
+  97: 少林派
+  98: 峨嵋派
+  99: 血刀门
+ 100: gain/max_qi
+ 101: 武当派
+ 102: 全真教
+ 103: linji-zhuang
+ 104: special_skill/ghost
+ 105: apply/max_qi
+ 106: weapon
+ 107: xiuyang
+ 108: gain/damage
+ 109: tiangang-bati
+ 110: wanjian-guizong
+ 111: yinyang-jiuzhuan
+ 112: rulai-shenzhang
+ 113: yuan-blade
+ 114: zuixian-wangyue
+ 115: lieyan-jue
+ 116: ruijin-jue
+ 117: chunyang-jue
+ 118: sword
+ 119: damo-jian
+ 120: skill_type
+ 121: hunyuan-yiqi
+ 122: whip
+ 123: riyue-bian
+ 124: taiji-jian
+ 125: taiji-shengong
+ 126: huifeng-jian
+ 127: 华山剑宗
+ 128: huashan-xinfa
+ 129: sword-cognize
+ 130: int
+ 131: 华山派
+ 132: zixia-shengong
+ 133: huashan-sword
+ 134: 丐帮
+ 135: huntian-qigong
+ 136: staff
+ 137: dagou-bang
+ 138: 桃花岛
+ 139: bibo-shengong
+ 140: 星宿派
+ 141: tianshan-zhang
+ 142: freezing-force
+ 143: str
+ 144: 逍遥派
+ 145: beiming-shengong
+ 146: blade
+ 147: ruyi-dao
+ 148: 古墓派
+ 149: surge-force
+ 150: xuantie-jian
+ 151: quanzhen-jian
+ 152: xuantian-gong
+ 153: 神龙教
+ 154: shenlong-xinfa
+ 155: dex
+ 156: hand
+ 157: shenlong-bashi
+ 158: longxiang-gong
+ 159: dodge
+ 160: shenkong-xing
+ 161: parry
+ 162: riyue-lun
+ 163: hammer
+ 164: xue-dao
+ 165: xuehai-mogong
+ 166: 灵鹫宫
+ 167: bahuang-gong
+ 168: 欧阳世家
+ 169: hamagong
+ 170: lingshe-zhangfa
+ 171: 关外胡家
+ 172: lengyue-shengong
+ 173: daojian-guizhen
+ 174: 慕容世家
+ 175: zihui-xinfa
+ 176: murong-sword
+ 177: 段氏皇族
+ 178: kurong-changong
+ 179: finger
+ 180: six-finger
+ 181: 明教
+ 182: jiuyang-shengong
+ 183: claw
+ 184: sougu-yingzhua
+ 185: shenghuo-shengong
+ 186: shenghuo-ling
+ 187: 日月神教
+ 188: kuihua-shengong
+ 189: xixing-dafa
+ 190: tianmo-jian
+ 191: pin
+ 192: 昆仑派
+ 193: liangyi-shengong
+ 194: qiankun-jian
+ 195: apply/gain_damage
+ 196: gain/break
+ 197: shaolin-shenfa
+ 198: jingang-buhuaiti
+ 199: strike
+ 200: yipai-liangsan
+ 201: tiyunzong
+ 202: taiji-quan
+ 203: unarmed
+ 204: zhutian-bu
+ 205: piaoxue-zhang
+ 206: lonely-sword
+ 207: huashan-shenfa
+ 208: feiyan-huixiang
+ 209: dragon-strike
+ 210: xiaoyaoyou
+ 211: anying-fuxiang
+ 212: yuxiao-jian
+ 213: chousui-zhang
+ 214: zhaixinggong
+ 215: zhemei-shou
+ 216: lingbo-weibu
+ 217: shemei-shou
+ 218: sad-strike
+ 219: yunv-shenfa
+ 220: jinyan-gong
+ 221: jinguan-yusuo
+ 222: yixingbu
+ 223: huagu-mianzhang
+ 224: yueying-wubu
+ 225: tianyu-qijian
+ 226: chanchu-bufa
+ 227: sixiang-bufa
+ 228: beidou-xianzong
+ 229: douzhuan-xingyi
+ 230: tiannan-step
+ 231: bianfu-bu
+ 232: qiankun-danuoyi
+ 233: shenghuo-bu
+ 234: piaomiao-shenfa
+ 235: chuanyun-bu
+ 236: gain/armor
+ 237: magic_points
+ 238: improve/jingli
+ 239: animaout
+ 240: learned_experience
+ 241: 潜能已达上限，暂时无�
+ 242: experience
+ 243: max_neili
+ 244: max_jingli
+ 245: pending/fight
+ 246: [33m如果你愿意和对方进
+ 247: (
+ 248: )
+ 249: 下一次 fight 指令。
+ 250: [2;37;0m\n
+ 251: [33m由于对方是由玩家控
+ 252: $N大喝道：
+ 253: ，你要干什么？\n
+ 254: [1;31m如果你要和
+ 255: 性命相搏，请你也对这�
+ 256: )下一次 kill 指令。
+ 257: say 嗯！怎么...
+ 258: say 啊！不好！
+ 259: $N大吃一惊，叫道：“好
+ 260: /adm/daemons/rankd
+ 261: query_rude
+ 262: ！真不要脸！”\n
+ 263: $N仓皇之间，不及说话，
+ 264: in_pkd
+ 265: die_protect/last_dead
+ 266: die_protect/duration
+ 267: $N处于被保护时期，$n不�
+ 268: die_protect
+ 269: delete
+ 270: env/sign1
+ 271: env/sign5
+ 272: ;
+ 273: force_me
+ 274: zdjb/s
+ 275: zdjb/def
+ 276: is_fighting
+ 277: is_busy
+ 278: :
+ 279: zdjb
+ 280: set_temp
+ 281: born
+ 282: 你省省吧，好好做你的�
+ 283: ，请于
+ 284: 以后再尝试。\n
+ 285: 系统禁止你送出信息
+ 286: [1;31m由于你发布的信息�
+ 287: 你可以继续发布信息了�
+ 288: /d/register/prison
+ 289: /adm/single/master
+ 290: rumor
+ 291: 听说
+ 292: 的刑期被
+ 293: 加长了
+ 294: 。
+ 295: catch_back
+ 296: startroom
+ 297: move
+ 298: “啪”的一声，$N狠狠的
+ 299: enable_player
+ 300: 越狱潜逃，结果被抓回�
+ 301: catch_ob
+ 302: 被
+ 303: 送进了
+ 304: short
+ 305: 
+ 306: [1;35m，禁闭
+ 307: “啪”的一声，$N重重的
+ 308: jing
+ 309: eff_jing
+ 310: qi
+ 311: eff_qi
+ 312: jingli
+ 313: neili
+ 314: receive_damage
+ 315: 缩短了
+ 316: 的刑期被缩短了
+ 317: free_ob
+ 318: revive
+ 319: 提前释放了。
+ 320: 已经刑满释放了。
+ 321: die_reason
+ 322: 惨死在监狱中
+ 323: character
+ 324: 光明磊落
+ 325: 心狠手辣
+ 326: 狡黠多变
+ 327: 阴险奸诈
+ 328: error: improve_craze amount to b
+ 329: brothers/
+ 330: %d
+ 331: chblk_on
+ 332: chblk_by
+ 333: 频道已经被 
+ 334:  关闭。\n
+ 335: 频道被关闭中。\n
+ 336: combat_exp
+ 337: last_examine/combat_exp
+ 338: last_examine/potential
+ 339: last_examine/experience
+ 340: last_examine/mud_age
+ 341: all_quest
+ 342: last_examine/all_quest
+ 343: last_examine/time
+ 344: 自上次检查 %s 以来：\n连
+PROGRAM:
+	0000: 16 46 03 136 00 04 203 00 46 67 64 00 46 67 65 00 
+	0010: 46 67 64 00 04 207 00 46 67 53 00 37 09 00 03 136 
+	0020: 00 04 15 01 109 46 16 46 67 51 00 08 198 04 48 46 
+	0030: 15 04 142 00 02 02 11 64 05 197 00 19 09 00 08 198 
+	0040: 04 68 51 00 97 47 45 00 153 01 00 01 02 04 12 13 
+	0050: 14 15 17 03 00 44 81 01 02 01 47 02 02 16 192 44 
+	0060: 237 00 02 01 02 02 17 18 60 00 99 14 19 99 03 136 
+	0070: 00 113 33 00 03 01 47 14 20 44 235 00 01 14 21 44 
+	0080: 235 00 01 100 11 100 20 11 00 02 02 20 65 44 239 00 
+	0090: 02 01 14 22 44 235 00 01 15 21 11 00 14 22 12 01 
+	00a0: 44 239 00 02 01 14 23 44 235 00 01 15 21 11 00 14 
+	00b0: 23 12 01 44 239 00 02 01 02 02 24 65 44 94 01 02 
+	00c0: 64 00 95 11 60 52 37 16 00 02 02 25 65 44 94 01 
+	00d0: 02 64 00 95 11 60 52 23 104 00 14 26 44 102 01 01 
+	00e0: 23 13 00 02 03 26 192 84 101 44 110 01 02 01 02 02 
+	00f0: 25 65 44 94 01 02 11 60 52 38 08 00 14 25 44 102 
+	0100: 01 01 23 13 00 02 03 25 192 74 101 44 110 01 02 01 
+	0110: 02 02 24 65 44 94 01 02 11 60 52 38 22 00 14 24 
+	0120: 44 102 01 01 38 13 00 02 02 27 28 03 136 00 07 134 
+	0130: 00 03 23 13 00 02 03 24 192 74 101 44 110 01 02 01 
+	0140: 47 03 136 00 04 175 01 98 00 63 00 24 10 00 03 136 
+	0150: 00 04 176 01 98 00 63 00 04 207 00 24 03 00 47 02 
+	0160: 03 29 64 192 71 60 00 07 12 01 03 46 47 02 02 192 
+	0170: 30 48 38 17 00 03 136 00 04 203 00 38 08 00 03 136 
+	0180: 00 04 175 01 23 24 00 02 02 31 32 03 136 00 02 02 
+	0190: 193 65 07 134 00 05 01 63 01 46 25 12 00 02 02 192 
+	01a0: 193 45 00 238 00 02 46 47 67 52 00 23 04 00 16 46 
+	01b0: 14 33 44 236 00 01 23 33 00 44 170 01 00 01 14 34 
+	01c0: 44 219 01 00 44 177 01 02 01 45 02 00 00 00 98 00 
+	01d0: 44 166 01 00 01 25 20 00 14 34 44 219 01 00 44 177 
+	01e0: 01 02 01 45 02 00 00 00 98 00 60 00 46 47 45 02 
+	01f0: 01 00 00 98 00 63 00 23 20 00 15 68 52 00 97 14 
+	0200: 35 03 136 00 04 176 01 44 177 01 02 01 60 00 46 47 
+	0210: 14 36 44 235 00 01 64 00 95 24 07 00 03 240 00 98 
+	0220: 00 14 37 44 235 00 01 15 21 48 00 02 02 37 192 03 
+	0230: 240 00 100 44 239 00 02 01 14 37 44 235 00 01 15 50 
+	0240: 23 21 00 02 02 37 64 44 177 01 02 01 03 136 00 14 
+	0250: 38 113 40 00 02 01 25 11 00 02 02 37 64 44 177 01 
+	0260: 02 01 14 36 03 240 00 44 177 01 02 01 67 54 00 24 
+	0270: 18 00 03 240 00 68 54 00 97 02 02 39 64 44 239 00 
+	0280: 02 01 03 240 00 67 54 00 100 64 03 95 11 100 21 06 
+	0290: 00 11 100 98 03 03 161 00 109 37 22 00 03 161 00 14 
+	02a0: 40 07 134 00 02 109 37 09 00 14 41 44 235 00 01 109 
+	02b0: 23 24 00 02 02 39 195 44 239 00 02 01 67 65 00 23 
+	02c0: 09 00 63 03 68 65 00 86 01 03 240 00 68 54 00 97 
+	02d0: 14 42 44 235 00 01 14 39 44 235 00 01 09 128 244 03 
+	02e0: 00 00 00 00 00 102 99 98 01 11 14 64 01 96 14 39 
+	02f0: 44 235 00 01 09 128 244 03 00 00 00 00 00 103 08 96 
+	0300: 84 102 98 02 14 43 60 02 44 177 01 02 01 14 44 44 
+	0310: 235 00 01 63 01 22 46 00 02 02 44 193 44 177 01 02 
+	0320: 01 02 02 45 85 04 158 00 11 10 99 44 177 01 02 01 
+	0330: 03 136 00 02 02 46 193 113 05 00 01 99 14 47 99 113 
+	0340: 40 00 02 01 47 15 68 54 00 97 44 216 01 00 01 45 
+	0350: 00 156 01 00 01 02 02 33 65 44 237 00 02 01 44 169 
+	0360: 01 00 01 14 48 44 235 00 01 23 14 00 02 02 49 50 
+	0370: 03 136 00 07 134 00 03 01 47 03 161 00 38 13 00 03 
+	0380: 161 00 02 02 52 51 07 134 00 03 23 03 00 47 60 00 
+	0390: 43 254 223 00 235 00 219 00 03 161 00 23 25 00 03 161 
+	03a0: 00 14 30 44 235 00 01 14 53 99 11 15 99 14 54 99 
+	03b0: 113 41 00 02 01 39 09 00 14 55 04 172 00 01 40 01 
+	03c0: 39 09 00 14 56 04 172 00 01 40 01 03 136 00 23 14 
+	03d0: 00 02 02 57 58 03 136 00 07 134 00 03 01 25 158 00 
+	03e0: 14 59 44 236 00 01 23 48 00 14 60 03 136 00 113 37 
+	03f0: 00 02 01 03 136 00 14 61 113 40 00 02 01 14 62 09 
+	0400: 64 126 05 00 00 00 00 00 44 110 01 02 01 14 59 44 
+	0410: 232 00 01 01 25 18 00 03 136 00 02 02 63 84 99 14 
+	0420: 64 99 113 40 00 02 01 03 161 00 23 28 00 03 161 00 
+	0430: 14 65 14 30 44 235 00 01 99 14 66 99 03 136 00 17 
+	0440: 01 00 113 41 00 03 01 14 56 04 172 00 01 03 136 00 
+	0450: 38 09 00 14 48 44 235 00 01 109 23 14 00 02 02 57 
+	0460: 58 03 136 00 07 134 00 03 01 25 18 00 47 25 14 00 
+	0470: 07 00 79 00 01 00 00 00 00 00 00 00 47 03 136 00 
+	0480: 14 67 07 134 00 02 01 14 48 44 235 00 01 109 38 26 
+	0490: 00 03 136 00 04 161 00 38 16 00 03 136 00 04 161 00 
+	04a0: 02 02 52 51 07 134 00 03 109 23 06 00 15 04 255 00 
+	04b0: 14 68 44 236 00 01 64 00 95 04 211 00 23 66 00 63 
+	04c0: 00 14 70 14 69 07 134 00 03 23 46 00 63 00 14 72 
+	04d0: 14 71 03 240 00 07 134 00 04 01 63 00 14 72 14 73 
+	04e0: 63 00 14 70 14 69 07 134 00 03 07 134 00 04 01 63 
+	04f0: 00 14 74 07 134 00 02 01 63 00 113 12 00 01 01 16 
+	0500: 68 53 00 97 03 136 00 04 23 01 38 36 00 14 48 44 
+	0510: 235 00 01 109 38 26 00 03 136 00 04 161 00 38 16 00 
+	0520: 03 136 00 04 161 00 02 02 52 51 07 134 00 03 109 23 
+	0530: 58 00 14 75 08 132 03 16 07 151 00 03 01 03 161 00 
+	0540: 14 30 44 235 00 01 14 76 99 03 136 00 113 41 00 03 
+	0550: 01 14 77 14 80 03 136 00 14 78 14 79 07 134 00 05 
+	0560: 01 16 44 83 00 01 01 25 31 00 03 161 00 23 25 00 
+	0570: 14 81 44 67 01 00 14 82 99 03 161 00 03 136 00 17 
+	0580: 01 00 113 33 00 04 01 47 16 04 255 00 15 68 53 00 
+	0590: 97 14 75 04 155 00 01 03 136 00 14 83 113 40 00 02 
+	05a0: 01 47 03 136 00 14 84 07 134 00 02 98 01 63 01 04 
+	05b0: 13 01 24 03 00 47 63 01 04 200 00 98 00 02 02 26 
+	05c0: 193 71 11 02 102 98 03 02 02 195 74 101 98 02 15 98 
+	05d0: 06 25 99 00 14 85 02 02 198 192 71 99 14 86 99 04 
+	05e0: 227 00 12 01 19 05 00 25 75 00 14 85 02 02 198 192 
+	05f0: 71 99 14 87 14 26 07 134 00 03 24 05 00 25 53 00 
+	0600: 02 02 198 192 71 63 01 71 98 04 02 02 195 196 99 11 
+	0610: 10 101 98 05 14 85 02 02 198 192 71 99 14 88 03 136 
+	0620: 00 07 134 00 03 64 05 96 02 02 197 194 21 06 00 63 
+	0630: 05 98 02 35 06 02 02 198 192 04 144 00 29 105 00 63 
+	0640: 02 14 89 44 235 00 01 101 11 100 102 64 02 96 14 90 
+	0650: 44 235 00 01 23 13 00 02 02 194 67 101 11 10 102 64 
+	0660: 02 96 14 91 44 235 00 01 23 14 00 14 92 44 235 00 
+	0670: 01 11 15 101 64 02 96 14 93 44 235 00 01 98 07 14 
+	0680: 94 44 235 00 01 14 95 48 38 31 00 63 07 14 96 48 
+	0690: 37 23 00 63 07 14 97 48 37 15 00 63 07 14 98 48 
+	06a0: 37 07 00 63 07 14 99 48 23 08 00 08 32 03 64 02 
+	06b0: 96 60 02 46 47 14 100 44 235 00 01 98 00 14 93 44 
+	06c0: 235 00 01 14 101 48 37 11 00 14 93 44 235 00 01 14 
+	06d0: 102 48 23 10 00 02 02 192 72 102 64 00 96 14 26 44 
+	06e0: 95 01 01 64 02 95 23 35 00 02 02 194 65 44 94 01 
+	06f0: 02 64 01 95 11 180 21 19 00 02 02 192 193 11 180 100 
+	0700: 11 05 102 101 11 100 102 64 00 96 14 93 44 235 00 01 
+	0710: 14 98 19 26 00 14 26 44 95 01 01 14 103 19 15 00 
+	0720: 14 103 16 44 94 01 02 11 20 101 64 00 96 14 104 44 
+	0730: 235 00 01 23 12 00 02 02 192 71 101 11 10 102 98 00 
+	0740: 14 105 44 236 00 01 64 00 96 60 00 46 47 14 106 44 
+	0750: 236 00 01 98 03 14 93 44 235 00 01 98 00 14 107 44 
+	0760: 235 00 01 98 02 14 108 44 235 00 01 14 109 44 94 01 
+	0770: 01 11 02 101 11 06 102 99 14 110 44 94 01 01 11 02 
+	0780: 101 11 06 102 99 14 111 44 94 01 01 11 02 101 11 06 
+	0790: 102 99 14 112 44 94 01 01 11 02 101 11 06 102 99 14 
+	07a0: 113 44 94 01 01 11 02 101 11 06 102 99 14 114 44 94 
+	07b0: 01 01 11 02 101 11 06 102 99 14 115 44 94 01 01 11 
+	07c0: 02 101 11 08 102 99 14 116 44 94 01 01 11 02 101 11 
+	07d0: 08 102 99 14 117 44 94 01 01 11 02 101 11 08 102 99 
+	07e0: 98 01 63 00 14 97 19 120 00 14 118 44 95 01 01 14 
+	07f0: 119 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 
+	0800: 52 14 120 07 134 00 03 14 118 48 23 28 00 14 121 16 
+	0810: 44 94 01 02 11 10 102 02 02 194 69 102 99 14 92 44 
+	0820: 235 00 01 99 64 01 96 14 122 44 95 01 01 14 123 48 
+	0830: 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 14 
+	0840: 120 07 134 00 03 14 122 48 23 22 00 14 121 16 44 94 
+	0850: 01 02 11 10 102 14 92 44 235 00 01 99 64 01 96 63 
+	0860: 00 14 101 19 64 00 14 118 44 95 01 01 14 124 48 38 
+	0870: 23 00 63 03 04 211 00 38 15 00 02 02 195 52 14 120 
+	0880: 07 134 00 03 14 118 48 23 28 00 14 125 16 44 94 01 
+	0890: 02 11 10 102 02 02 194 74 102 99 14 92 44 235 00 01 
+	08a0: 99 64 01 96 63 00 14 98 19 64 00 14 118 44 95 01 
+	08b0: 01 14 126 48 38 23 00 63 03 04 211 00 38 15 00 02 
+	08c0: 02 195 52 14 120 07 134 00 03 14 118 48 23 28 00 14 
+	08d0: 103 16 44 94 01 02 11 10 102 02 02 194 74 102 99 14 
+	08e0: 92 44 235 00 01 99 64 01 96 63 00 14 127 19 33 00 
+	08f0: 14 26 44 95 01 01 14 128 19 22 00 14 129 16 44 94 
+	0900: 01 02 11 05 102 14 130 44 235 00 01 99 64 01 96 63 
+	0910: 00 14 131 19 95 00 14 26 44 95 01 01 14 132 19 22 
+	0920: 00 14 129 16 44 94 01 02 11 05 102 14 130 44 235 00 
+	0930: 01 99 64 01 96 14 118 44 95 01 01 14 133 48 38 23 
+	0940: 00 63 03 04 211 00 38 15 00 02 02 195 52 14 120 07 
+	0950: 134 00 03 14 118 48 23 28 00 14 132 16 44 94 01 02 
+	0960: 11 10 102 14 130 44 235 00 01 99 02 02 194 74 102 99 
+	0970: 64 01 96 63 00 14 134 19 90 00 14 26 44 95 01 01 
+	0980: 14 135 19 17 00 02 02 194 69 102 14 92 44 235 00 01 
+	0990: 99 64 01 96 14 136 44 95 01 01 14 137 48 38 23 00 
+	09a0: 63 03 04 211 00 38 15 00 02 02 195 52 14 120 07 134 
+	09b0: 00 03 14 136 48 23 28 00 14 135 16 44 94 01 02 11 
+	09c0: 10 102 14 130 44 235 00 01 99 02 02 194 74 102 99 64 
+	09d0: 01 96 63 00 14 138 19 28 00 14 26 44 95 01 01 14 
+	09e0: 139 19 17 00 02 02 194 69 102 14 130 44 235 00 01 99 
+	09f0: 64 01 96 63 00 14 140 19 64 00 14 136 44 95 01 01 
+	0a00: 14 141 48 38 23 00 63 03 04 211 00 38 15 00 02 02 
+	0a10: 195 52 14 120 07 134 00 03 14 136 48 23 28 00 14 142 
+	0a20: 16 44 94 01 02 11 10 102 14 143 44 235 00 01 99 02 
+	0a30: 02 194 74 102 99 64 01 96 63 00 14 144 19 90 00 14 
+	0a40: 26 44 95 01 01 14 145 19 17 00 14 130 44 235 00 01 
+	0a50: 02 02 194 69 102 99 64 01 96 14 146 44 95 01 01 14 
+	0a60: 147 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 
+	0a70: 52 14 120 07 134 00 03 14 146 48 23 28 00 14 145 16 
+	0a80: 44 94 01 02 11 10 102 14 130 44 235 00 01 99 02 02 
+	0a90: 194 74 102 99 64 01 96 63 00 14 148 19 90 00 14 26 
+	0aa0: 44 95 01 01 14 149 19 17 00 14 92 44 235 00 01 02 
+	0ab0: 02 194 69 102 99 64 01 96 14 118 44 95 01 01 14 150 
+	0ac0: 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 
+	0ad0: 14 120 07 134 00 03 14 118 48 23 28 00 14 149 16 44 
+	0ae0: 94 01 02 11 10 102 14 92 44 235 00 01 99 02 02 194 
+	0af0: 74 102 99 64 01 96 63 00 14 102 19 64 00 14 118 44 
+	0b00: 95 01 01 14 151 48 38 23 00 63 03 04 211 00 38 15 
+	0b10: 00 02 02 195 52 14 120 07 134 00 03 14 118 48 23 28 
+	0b20: 00 14 152 16 44 94 01 02 11 10 102 14 92 44 235 00 
+	0b30: 01 99 02 02 194 74 102 99 64 01 96 63 00 14 153 19 
+	0b40: 78 00 14 26 44 95 01 01 14 154 19 17 00 14 155 44 
+	0b50: 235 00 01 02 02 194 69 102 99 64 01 96 14 156 44 95 
+	0b60: 01 01 14 157 48 38 11 00 14 156 44 98 01 01 14 157 
+	0b70: 48 23 28 00 14 155 44 235 00 01 02 02 194 74 102 99 
+	0b80: 14 154 16 44 94 01 02 11 10 102 99 64 01 96 63 00 
+	0b90: 14 96 19 110 00 14 26 44 95 01 01 14 158 48 38 59 
+	0ba0: 00 14 159 44 95 01 01 14 160 48 38 47 00 14 161 44 
+	0bb0: 95 01 01 14 162 48 38 35 00 14 163 44 95 01 01 14 
+	0bc0: 162 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 
+	0bd0: 52 14 120 07 134 00 03 14 163 48 23 14 00 14 158 16 
+	0be0: 44 94 01 02 11 02 102 98 04 63 04 08 138 02 21 07 
+	0bf0: 00 08 138 02 98 04 02 02 194 74 102 63 04 99 64 01 
+	0c00: 96 63 00 14 99 19 64 00 14 146 44 95 01 01 14 164 
+	0c10: 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 
+	0c20: 14 120 07 134 00 03 14 146 48 23 28 00 14 165 16 44 
+	0c30: 94 01 02 11 10 102 14 143 44 235 00 01 99 02 02 194 
+	0c40: 74 102 99 64 01 96 63 00 14 166 19 28 00 14 26 44 
+	0c50: 95 01 01 14 167 19 17 00 14 155 44 235 00 01 02 02 
+	0c60: 194 69 102 99 64 01 96 63 00 14 168 19 90 00 14 26 
+	0c70: 44 95 01 01 14 169 19 17 00 14 143 44 235 00 01 02 
+	0c80: 02 194 69 102 99 64 01 96 14 136 44 95 01 01 14 170 
+	0c90: 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 
+	0ca0: 14 120 07 134 00 03 14 136 48 23 28 00 14 169 16 44 
+	0cb0: 94 01 02 11 10 102 14 143 44 235 00 01 99 02 02 194 
+	0cc0: 74 102 99 64 01 96 63 00 14 171 19 110 00 14 26 44 
+	0cd0: 95 01 01 14 172 19 27 00 14 143 44 235 00 01 14 130 
+	0ce0: 44 235 00 01 99 11 02 102 02 02 194 69 102 99 64 01 
+	0cf0: 96 14 146 44 95 01 01 14 173 48 38 23 00 63 03 04 
+	0d00: 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 14 
+	0d10: 146 48 23 38 00 14 172 16 44 94 01 02 11 10 102 14 
+	0d20: 143 44 235 00 01 14 130 44 235 00 01 99 11 02 102 99 
+	0d30: 02 02 194 74 102 99 64 01 96 63 00 14 174 19 90 00 
+	0d40: 14 26 44 95 01 01 14 175 19 17 00 14 92 44 235 00 
+	0d50: 01 02 02 194 69 102 99 64 01 96 14 118 44 95 01 01 
+	0d60: 14 176 48 38 23 00 63 03 04 211 00 38 15 00 02 02 
+	0d70: 195 52 14 120 07 134 00 03 14 118 48 23 28 00 14 175 
+	0d80: 16 44 94 01 02 11 05 102 14 92 44 235 00 01 99 02 
+	0d90: 02 194 74 102 99 64 01 96 63 00 14 177 19 78 00 14 
+	0da0: 26 44 95 01 01 14 178 19 17 00 14 130 44 235 00 01 
+	0db0: 02 02 194 69 102 99 64 01 96 14 179 44 95 01 01 14 
+	0dc0: 180 48 38 11 00 14 179 44 98 01 01 14 180 48 23 28 
+	0dd0: 00 14 178 16 44 94 01 02 11 10 102 02 02 194 74 102 
+	0de0: 99 14 130 44 235 00 01 99 64 01 96 63 00 14 181 19 
+	0df0: 162 00 14 26 44 95 01 01 14 182 19 52 00 14 183 44 
+	0e00: 95 01 01 14 184 48 38 11 00 14 183 44 98 01 01 14 
+	0e10: 184 48 23 28 00 14 182 16 44 94 01 02 11 10 102 02 
+	0e20: 02 194 74 102 99 14 130 44 235 00 01 99 64 01 96 14 
+	0e30: 26 44 95 01 01 14 185 19 90 00 14 26 44 95 01 01 
+	0e40: 14 185 19 17 00 14 130 44 235 00 01 02 02 194 69 102 
+	0e50: 99 64 01 96 14 118 44 95 01 01 14 186 48 38 23 00 
+	0e60: 63 03 04 211 00 38 15 00 02 02 195 52 14 120 07 134 
+	0e70: 00 03 14 118 48 23 28 00 14 185 16 44 94 01 02 11 
+	0e80: 05 102 02 02 194 74 102 99 14 130 44 235 00 01 99 64 
+	0e90: 01 96 63 00 14 187 19 132 00 14 26 44 95 01 01 14 
+	0ea0: 188 19 17 00 02 02 194 69 102 14 155 44 235 00 01 99 
+	0eb0: 64 01 96 14 26 44 95 01 01 14 189 19 95 00 02 02 
+	0ec0: 194 69 102 14 92 44 235 00 01 99 64 01 96 14 118 44 
+	0ed0: 95 01 01 14 190 48 38 39 00 63 03 04 211 00 38 31 
+	0ee0: 00 02 02 195 52 14 120 07 134 00 03 14 118 48 37 15 
+	0ef0: 00 02 02 195 52 14 120 07 134 00 03 14 191 48 23 28 
+	0f00: 00 14 189 16 44 94 01 02 11 10 102 02 02 194 74 102 
+	0f10: 99 14 92 44 235 00 01 99 64 01 96 60 00 14 192 19 
+	0f20: 90 00 14 26 44 95 01 01 14 193 19 17 00 14 130 44 
+	0f30: 235 00 01 02 02 194 69 102 99 64 01 96 14 118 44 95 
+	0f40: 01 01 14 194 48 38 23 00 63 03 04 211 00 38 15 00 
+	0f50: 02 02 195 52 14 120 07 134 00 03 14 118 48 23 28 00 
+	0f60: 14 193 16 44 94 01 02 11 10 102 02 02 194 74 102 99 
+	0f70: 14 130 44 235 00 01 99 64 01 96 14 195 44 236 00 01 
+	0f80: 64 01 96 60 01 46 47 14 106 44 236 00 01 98 03 14 
+	0f90: 107 44 235 00 01 98 01 14 196 44 235 00 01 14 196 44 
+	0fa0: 236 00 01 99 98 02 14 93 44 235 00 01 98 00 63 00 
+	0fb0: 14 97 19 142 00 14 26 44 95 01 01 14 121 48 38 119 
+	0fc0: 00 14 159 44 95 01 01 14 197 48 38 107 00 14 161 44 
+	0fd0: 95 01 01 14 198 48 38 95 00 14 118 44 95 01 01 14 
+	0fe0: 119 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 
+	0ff0: 52 14 120 07 134 00 03 14 118 48 37 59 00 14 122 44 
+	1000: 95 01 01 14 123 48 38 23 00 63 03 04 211 00 38 15 
+	1010: 00 02 02 195 52 14 120 07 134 00 03 14 122 48 37 23 
+	1020: 00 14 199 44 95 01 01 14 200 48 38 11 00 14 199 44 
+	1030: 98 01 01 14 200 48 23 10 00 02 02 193 69 102 64 02 
+	1040: 96 63 00 14 101 19 118 00 14 26 44 95 01 01 14 125 
+	1050: 48 38 95 00 14 159 44 95 01 01 14 201 48 38 83 00 
+	1060: 14 161 44 95 01 01 14 202 48 37 11 00 14 161 44 95 
+	1070: 01 01 14 124 48 38 59 00 14 118 44 95 01 01 14 124 
+	1080: 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 
+	1090: 14 120 07 134 00 03 14 118 48 37 23 00 14 203 44 95 
+	10a0: 01 01 14 202 48 38 11 00 14 203 44 98 01 01 14 202 
+	10b0: 48 23 10 00 02 02 193 69 102 64 02 96 63 00 14 98 
+	10c0: 19 118 00 14 26 44 95 01 01 14 103 48 38 95 00 14 
+	10d0: 159 44 95 01 01 14 204 48 38 83 00 14 161 44 95 01 
+	10e0: 01 14 205 48 37 11 00 14 161 44 95 01 01 14 126 48 
+	10f0: 38 59 00 14 118 44 95 01 01 14 126 48 38 23 00 63 
+	1100: 03 04 211 00 38 15 00 02 02 195 52 14 120 07 134 00 
+	1110: 03 14 118 48 37 23 00 14 199 44 95 01 01 14 205 48 
+	1120: 38 11 00 14 199 44 98 01 01 14 205 48 23 10 00 02 
+	1130: 02 193 69 102 64 02 96 63 00 14 127 19 144 00 14 118 
+	1140: 44 95 01 01 14 206 48 38 23 00 63 03 04 211 00 38 
+	1150: 15 00 02 02 195 52 14 120 07 134 00 03 14 118 48 23 
+	1160: 28 00 14 128 16 44 94 01 02 11 10 102 14 130 44 235 
+	1170: 00 01 99 02 02 193 74 102 99 64 02 96 14 26 44 95 
+	1180: 01 01 14 128 48 38 59 00 14 159 44 95 01 01 14 207 
+	1190: 48 38 47 00 14 161 44 95 01 01 14 206 48 38 35 00 
+	11a0: 14 118 44 95 01 01 14 206 48 38 23 00 63 03 04 211 
+	11b0: 00 38 15 00 02 02 195 52 14 120 07 134 00 03 14 118 
+	11c0: 48 23 10 00 02 02 193 69 102 64 02 96 63 00 14 131 
+	11d0: 19 82 00 14 26 44 95 01 01 14 132 48 38 59 00 14 
+	11e0: 159 44 95 01 01 14 208 48 38 47 00 14 161 44 95 01 
+	11f0: 01 14 133 48 38 35 00 14 118 44 95 01 01 14 133 48 
+	1200: 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 14 
+	1210: 120 07 134 00 03 14 118 48 23 10 00 02 02 193 69 102 
+	1220: 64 02 96 63 00 14 134 19 168 00 14 199 44 95 01 01 
+	1230: 14 209 48 38 11 00 14 199 44 98 01 01 14 209 48 23 
+	1240: 28 00 14 135 16 44 94 01 02 11 10 102 02 02 193 74 
+	1250: 102 99 14 143 44 235 00 01 99 64 02 96 14 26 44 95 
+	1260: 01 01 14 135 48 38 95 00 14 159 44 95 01 01 14 210 
+	1270: 48 38 83 00 14 161 44 95 01 01 14 137 48 37 11 00 
+	1280: 14 161 44 95 01 01 14 209 48 38 59 00 14 136 44 95 
+	1290: 01 01 14 137 48 38 23 00 63 03 04 211 00 38 15 00 
+	12a0: 02 02 195 52 14 120 07 134 00 03 14 136 48 37 23 00 
+	12b0: 14 199 44 95 01 01 14 209 48 38 11 00 14 199 44 98 
+	12c0: 01 01 14 209 48 23 10 00 02 02 193 69 102 64 02 96 
+	12d0: 63 00 14 138 19 82 00 14 26 44 95 01 01 14 139 48 
+	12e0: 38 59 00 14 159 44 95 01 01 14 211 48 38 47 00 14 
+	12f0: 161 44 95 01 01 14 212 48 38 35 00 14 118 44 95 01 
+	1300: 01 14 212 48 38 23 00 63 03 04 211 00 38 15 00 02 
+	1310: 02 195 52 14 120 07 134 00 03 14 118 48 23 10 00 02 
+	1320: 02 193 69 102 64 02 96 63 00 14 140 19 144 00 14 199 
+	1330: 44 95 01 01 14 213 48 38 11 00 14 199 44 98 01 01 
+	1340: 14 213 48 23 28 00 02 02 193 74 102 14 143 44 235 00 
+	1350: 01 99 14 142 16 44 94 01 02 11 10 102 99 64 02 96 
+	1360: 14 26 44 95 01 01 14 142 48 38 71 00 14 159 44 95 
+	1370: 01 01 14 214 48 38 59 00 14 161 44 95 01 01 14 141 
+	1380: 48 37 11 00 14 161 44 95 01 01 14 213 48 38 35 00 
+	1390: 14 136 44 95 01 01 14 141 48 38 23 00 63 03 04 211 
+	13a0: 00 38 15 00 02 02 195 52 14 120 07 134 00 03 14 136 
+	13b0: 48 23 10 00 02 02 193 69 102 64 02 96 63 00 14 144 
+	13c0: 19 168 00 14 156 44 95 01 01 14 215 48 38 11 00 14 
+	13d0: 156 44 98 01 01 14 215 48 23 28 00 02 02 193 74 102 
+	13e0: 14 130 44 235 00 01 99 14 145 16 44 94 01 02 11 10 
+	13f0: 102 99 64 02 96 14 26 44 95 01 01 14 145 48 38 95 
+	1400: 00 14 159 44 95 01 01 14 216 48 38 83 00 14 161 44 
+	1410: 95 01 01 14 217 48 37 11 00 14 161 44 95 01 01 14 
+	1420: 147 48 38 59 00 14 146 44 95 01 01 14 147 48 38 23 
+	1430: 00 63 03 04 211 00 38 15 00 02 02 195 52 14 120 07 
+	1440: 134 00 03 14 146 48 37 23 00 14 156 44 95 01 01 14 
+	1450: 215 48 38 11 00 14 156 44 98 01 01 14 215 48 23 10 
+	1460: 00 02 02 193 69 102 64 02 96 63 00 14 148 19 168 00 
+	1470: 14 203 44 95 01 01 14 218 48 38 11 00 14 203 44 98 
+	1480: 01 01 14 218 48 23 28 00 02 02 193 74 102 14 92 44 
+	1490: 235 00 01 99 14 149 16 44 94 01 02 11 10 102 99 64 
+	14a0: 02 96 14 26 44 95 01 01 14 149 48 38 95 00 14 159 
+	14b0: 44 95 01 01 14 219 48 38 83 00 14 161 44 95 01 01 
+	14c0: 14 218 48 37 11 00 14 161 44 95 01 01 14 150 48 38 
+	14d0: 59 00 14 118 44 95 01 01 14 150 48 38 23 00 63 03 
+	14e0: 04 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 
+	14f0: 14 118 48 37 23 00 14 203 44 95 01 01 14 218 48 38 
+	1500: 11 00 14 203 44 98 01 01 14 218 48 23 10 00 02 02 
+	1510: 193 69 102 64 02 96 63 00 14 102 19 82 00 14 26 44 
+	1520: 95 01 01 14 24 48 38 59 00 14 159 44 95 01 01 14 
+	1530: 220 48 38 47 00 14 161 44 95 01 01 14 221 48 38 35 
+	1540: 00 14 118 44 95 01 01 14 151 48 38 23 00 63 03 04 
+	1550: 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 14 
+	1560: 118 48 23 10 00 02 02 193 69 102 64 02 96 63 00 14 
+	1570: 153 19 106 00 14 26 44 95 01 01 14 154 48 38 83 00 
+	1580: 14 159 44 95 01 01 14 222 48 38 71 00 14 161 44 95 
+	1590: 01 01 14 157 48 37 11 00 14 161 44 95 01 01 14 223 
+	15a0: 48 38 47 00 14 199 44 95 01 01 14 223 48 38 11 00 
+	15b0: 14 199 44 98 01 01 14 223 48 37 23 00 14 156 44 95 
+	15c0: 01 01 14 157 48 38 11 00 14 156 44 98 01 01 14 157 
+	15d0: 48 23 10 00 02 02 193 69 102 64 02 96 63 00 14 96 
+	15e0: 19 144 00 14 163 44 95 01 01 14 162 48 38 23 00 63 
+	15f0: 03 04 211 00 38 15 00 02 02 195 52 14 120 07 134 00 
+	1600: 03 14 163 48 23 28 00 14 158 16 44 94 01 02 11 10 
+	1610: 102 14 143 44 235 00 01 99 02 02 193 74 102 99 64 02 
+	1620: 96 14 26 44 95 01 01 14 158 48 38 59 00 14 159 44 
+	1630: 95 01 01 14 160 48 38 47 00 14 161 44 95 01 01 14 
+	1640: 162 48 38 35 00 14 163 44 95 01 01 14 162 48 38 23 
+	1650: 00 63 03 04 211 00 38 15 00 02 02 195 52 14 120 07 
+	1660: 134 00 03 14 163 48 23 10 00 02 02 193 69 102 64 02 
+	1670: 96 63 00 14 99 19 108 00 14 26 44 95 01 01 14 165 
+	1680: 19 17 00 02 02 193 69 102 14 143 44 235 00 01 99 64 
+	1690: 02 96 14 26 44 95 01 01 14 165 48 38 59 00 14 159 
+	16a0: 44 95 01 01 14 160 48 38 47 00 14 161 44 95 01 01 
+	16b0: 14 164 48 38 35 00 14 146 44 95 01 01 14 164 48 38 
+	16c0: 23 00 63 03 04 211 00 38 15 00 02 02 195 52 14 120 
+	16d0: 07 134 00 03 14 146 48 23 10 00 02 02 193 69 102 64 
+	16e0: 02 96 63 00 14 166 19 82 00 14 26 44 95 01 01 14 
+	16f0: 167 48 38 59 00 14 159 44 95 01 01 14 224 48 38 47 
+	1700: 00 14 161 44 95 01 01 14 225 48 38 35 00 14 118 44 
+	1710: 95 01 01 14 225 48 38 23 00 63 03 04 211 00 38 15 
+	1720: 00 02 02 195 52 14 120 07 134 00 03 14 118 48 23 10 
+	1730: 00 02 02 193 69 102 64 02 96 63 00 14 168 19 168 00 
+	1740: 14 203 44 95 01 01 14 169 48 38 11 00 14 203 44 98 
+	1750: 01 01 14 169 48 23 28 00 02 02 193 74 102 14 143 44 
+	1760: 235 00 01 99 14 169 16 44 94 01 02 11 10 102 99 64 
+	1770: 02 96 14 26 44 95 01 01 14 169 48 38 95 00 14 159 
+	1780: 44 95 01 01 14 226 48 38 83 00 14 161 44 95 01 01 
+	1790: 14 169 48 37 11 00 14 161 44 95 01 01 14 170 48 38 
+	17a0: 59 00 14 136 44 95 01 01 14 170 48 38 23 00 63 03 
+	17b0: 04 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 
+	17c0: 14 136 48 37 23 00 14 203 44 95 01 01 14 169 48 38 
+	17d0: 11 00 14 203 44 98 01 01 14 169 48 23 10 00 02 02 
+	17e0: 193 69 102 64 02 96 63 00 14 171 19 82 00 14 26 44 
+	17f0: 95 01 01 14 172 48 38 59 00 14 159 44 95 01 01 14 
+	1800: 227 48 38 47 00 14 161 44 95 01 01 14 173 48 38 35 
+	1810: 00 14 146 44 95 01 01 14 173 48 38 23 00 63 03 04 
+	1820: 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 14 
+	1830: 146 48 23 10 00 02 02 193 69 102 64 02 96 63 00 14 
+	1840: 174 19 82 00 14 26 44 95 01 01 14 175 48 38 59 00 
+	1850: 14 159 44 95 01 01 14 228 48 38 47 00 14 161 44 95 
+	1860: 01 01 14 229 48 38 35 00 14 118 44 95 01 01 14 176 
+	1870: 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 
+	1880: 14 120 07 134 00 03 14 118 48 23 10 00 02 02 193 69 
+	1890: 102 64 02 96 63 00 14 177 19 70 00 14 26 44 95 01 
+	18a0: 01 14 178 48 38 47 00 14 159 44 95 01 01 14 230 48 
+	18b0: 38 35 00 14 161 44 95 01 01 14 180 48 38 23 00 14 
+	18c0: 179 44 95 01 01 14 180 48 38 11 00 14 179 44 98 01 
+	18d0: 01 14 180 48 23 10 00 02 02 193 69 102 64 02 96 63 
+	18e0: 00 14 181 19 196 00 14 26 44 95 01 01 14 182 19 94 
+	18f0: 00 14 26 44 95 01 01 14 182 48 38 71 00 14 159 44 
+	1900: 95 01 01 14 231 48 38 59 00 14 161 44 95 01 01 14 
+	1910: 232 48 38 47 00 14 183 44 95 01 01 14 184 48 38 11 
+	1920: 00 14 183 44 98 01 01 14 184 48 37 23 00 14 203 44 
+	1930: 95 01 01 14 182 48 38 11 00 14 203 44 98 01 01 14 
+	1940: 182 48 23 10 00 02 02 193 69 102 64 02 96 14 26 44 
+	1950: 95 01 01 14 185 19 82 00 14 26 44 95 01 01 14 185 
+	1960: 48 38 59 00 14 159 44 95 01 01 14 233 48 38 47 00 
+	1970: 14 161 44 95 01 01 14 232 48 38 35 00 14 118 44 95 
+	1980: 01 01 14 186 48 38 23 00 63 03 04 211 00 38 15 00 
+	1990: 02 02 195 52 14 120 07 134 00 03 14 118 48 23 10 00 
+	19a0: 02 02 193 69 102 64 02 96 63 00 14 187 19 246 00 14 
+	19b0: 26 44 95 01 01 14 188 19 144 00 14 118 44 95 01 01 
+	19c0: 14 188 48 38 23 00 63 03 04 211 00 38 15 00 02 02 
+	19d0: 195 52 14 120 07 134 00 03 14 118 48 23 28 00 02 02 
+	19e0: 193 74 102 14 155 44 235 00 01 99 14 188 16 44 94 01 
+	19f0: 02 11 10 102 99 64 02 96 14 26 44 95 01 01 14 188 
+	1a00: 48 38 59 00 14 159 44 95 01 01 14 188 48 38 47 00 
+	1a10: 14 161 44 95 01 01 14 188 48 38 35 00 14 118 44 95 
+	1a20: 01 01 14 188 48 38 23 00 63 03 04 211 00 38 15 00 
+	1a30: 02 02 195 52 14 120 07 134 00 03 14 118 48 23 10 00 
+	1a40: 02 02 193 69 102 64 02 96 14 26 44 95 01 01 14 189 
+	1a50: 19 82 00 14 26 44 95 01 01 14 189 48 38 59 00 14 
+	1a60: 159 44 95 01 01 14 234 48 38 47 00 14 161 44 95 01 
+	1a70: 01 14 190 48 38 35 00 14 118 44 95 01 01 14 190 48 
+	1a80: 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 14 
+	1a90: 120 07 134 00 03 14 118 48 23 10 00 02 02 193 69 102 
+	1aa0: 64 02 96 60 00 14 192 19 82 00 14 26 44 95 01 01 
+	1ab0: 14 193 48 38 59 00 14 159 44 95 01 01 14 235 48 38 
+	1ac0: 47 00 14 161 44 95 01 01 14 194 48 38 35 00 14 118 
+	1ad0: 44 95 01 01 14 194 48 38 23 00 63 03 04 211 00 38 
+	1ae0: 15 00 02 02 195 52 14 120 07 134 00 03 14 118 48 23 
+	1af0: 10 00 02 02 193 74 102 64 02 96 60 02 46 47 14 106 
+	1b00: 44 236 00 01 98 03 14 107 44 235 00 01 98 01 14 236 
+	1b10: 44 235 00 01 14 236 44 236 00 01 99 98 02 14 93 44 
+	1b20: 235 00 01 98 00 63 00 14 97 19 165 00 14 26 44 95 
+	1b30: 01 01 14 121 19 14 00 14 26 44 94 01 01 11 02 102 
+	1b40: 64 02 96 14 26 44 95 01 01 14 121 48 38 119 00 14 
+	1b50: 159 44 95 01 01 14 197 48 38 107 00 14 161 44 95 01 
+	1b60: 01 14 198 48 38 95 00 14 118 44 95 01 01 14 119 48 
+	1b70: 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 14 
+	1b80: 120 07 134 00 03 14 118 48 37 59 00 14 122 44 95 01 
+	1b90: 01 14 123 48 38 23 00 63 03 04 211 00 38 15 00 02 
+	1ba0: 02 195 52 14 120 07 134 00 03 14 122 48 37 23 00 14 
+	1bb0: 199 44 95 01 01 14 200 48 38 11 00 14 199 44 98 01 
+	1bc0: 01 14 200 48 23 10 00 02 02 193 69 102 64 02 96 63 
+	1bd0: 00 14 101 19 168 00 14 203 44 95 01 01 14 202 48 38 
+	1be0: 11 00 14 203 44 98 01 01 14 202 48 23 28 00 14 125 
+	1bf0: 16 44 94 01 02 11 10 102 02 02 193 74 102 99 14 92 
+	1c00: 44 235 00 01 99 64 02 96 14 26 44 95 01 01 14 125 
+	1c10: 48 38 95 00 14 159 44 95 01 01 14 201 48 38 83 00 
+	1c20: 14 161 44 95 01 01 14 202 48 37 11 00 14 161 44 95 
+	1c30: 01 01 14 124 48 38 59 00 14 118 44 95 01 01 14 124 
+	1c40: 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 
+	1c50: 14 120 07 134 00 03 14 118 48 37 23 00 14 203 44 95 
+	1c60: 01 01 14 202 48 38 11 00 14 203 44 98 01 01 14 202 
+	1c70: 48 23 10 00 02 02 193 69 102 64 02 96 63 00 14 98 
+	1c80: 19 141 00 14 26 44 95 01 01 14 103 19 14 00 14 26 
+	1c90: 44 94 01 01 11 02 102 64 02 96 14 26 44 95 01 01 
+	1ca0: 14 103 48 38 95 00 14 159 44 95 01 01 14 204 48 38 
+	1cb0: 83 00 14 161 44 95 01 01 14 205 48 37 11 00 14 161 
+	1cc0: 44 95 01 01 14 126 48 38 59 00 14 118 44 95 01 01 
+	1cd0: 14 126 48 38 23 00 63 03 04 211 00 38 15 00 02 02 
+	1ce0: 195 52 14 120 07 134 00 03 14 118 48 37 23 00 14 199 
+	1cf0: 44 95 01 01 14 205 48 38 11 00 14 199 44 98 01 01 
+	1d00: 14 205 48 23 10 00 02 02 193 69 102 64 02 96 63 00 
+	1d10: 14 127 19 105 00 14 26 44 95 01 01 14 128 19 14 00 
+	1d20: 14 26 44 94 01 01 11 02 102 64 02 96 14 26 44 95 
+	1d30: 01 01 14 128 48 38 59 00 14 159 44 95 01 01 14 207 
+	1d40: 48 38 47 00 14 161 44 95 01 01 14 206 48 38 35 00 
+	1d50: 14 118 44 95 01 01 14 206 48 38 23 00 63 03 04 211 
+	1d60: 00 38 15 00 02 02 195 52 14 120 07 134 00 03 14 118 
+	1d70: 48 23 10 00 02 02 193 69 102 64 02 96 63 00 14 131 
+	1d80: 19 105 00 14 26 44 95 01 01 14 132 19 14 00 14 26 
+	1d90: 44 94 01 01 11 02 102 64 02 96 14 26 44 95 01 01 
+	1da0: 14 132 48 38 59 00 14 159 44 95 01 01 14 208 48 38 
+	1db0: 47 00 14 161 44 95 01 01 14 133 48 38 35 00 14 118 
+	1dc0: 44 95 01 01 14 133 48 38 23 00 63 03 04 211 00 38 
+	1dd0: 15 00 02 02 195 52 14 120 07 134 00 03 14 118 48 23 
+	1de0: 10 00 02 02 193 69 102 64 02 96 63 00 14 134 19 118 
+	1df0: 00 14 26 44 95 01 01 14 135 48 38 95 00 14 159 44 
+	1e00: 95 01 01 14 210 48 38 83 00 14 161 44 95 01 01 14 
+	1e10: 137 48 37 11 00 14 161 44 95 01 01 14 209 48 38 59 
+	1e20: 00 14 136 44 95 01 01 14 137 48 38 23 00 63 03 04 
+	1e30: 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 14 
+	1e40: 136 48 37 23 00 14 199 44 95 01 01 14 209 48 38 11 
+	1e50: 00 14 199 44 98 01 01 14 209 48 23 10 00 02 02 193 
+	1e60: 69 102 64 02 96 63 00 14 138 19 167 00 14 26 44 95 
+	1e70: 01 01 14 139 19 14 00 14 26 44 94 01 01 11 02 102 
+	1e80: 64 02 96 14 118 44 95 01 01 14 212 48 38 23 00 63 
+	1e90: 03 04 211 00 38 15 00 02 02 195 52 14 120 07 134 00 
+	1ea0: 03 14 118 48 23 28 00 14 139 16 44 94 01 02 11 10 
+	1eb0: 102 14 130 44 235 00 01 99 02 02 193 74 102 99 64 02 
+	1ec0: 96 14 26 44 95 01 01 14 139 48 38 59 00 14 159 44 
+	1ed0: 95 01 01 14 211 48 38 47 00 14 161 44 95 01 01 14 
+	1ee0: 212 48 38 35 00 14 118 44 95 01 01 14 212 48 38 23 
+	1ef0: 00 63 03 04 211 00 38 15 00 02 02 195 52 14 120 07 
+	1f00: 134 00 03 14 118 48 23 10 00 02 02 193 69 102 64 02 
+	1f10: 96 63 00 14 140 19 117 00 14 26 44 95 01 01 14 142 
+	1f20: 19 14 00 14 26 44 94 01 01 11 02 102 64 02 96 14 
+	1f30: 26 44 95 01 01 14 142 48 38 71 00 14 159 44 95 01 
+	1f40: 01 14 214 48 38 59 00 14 161 44 95 01 01 14 141 48 
+	1f50: 37 11 00 14 161 44 95 01 01 14 213 48 38 35 00 14 
+	1f60: 136 44 95 01 01 14 141 48 38 23 00 63 03 04 211 00 
+	1f70: 38 15 00 02 02 195 52 14 120 07 134 00 03 14 136 48 
+	1f80: 23 10 00 02 02 193 69 102 64 02 96 63 00 14 144 19 
+	1f90: 118 00 14 26 44 95 01 01 14 145 48 38 95 00 14 159 
+	1fa0: 44 95 01 01 14 216 48 38 83 00 14 161 44 95 01 01 
+	1fb0: 14 217 48 37 11 00 14 161 44 95 01 01 14 147 48 38 
+	1fc0: 59 00 14 146 44 95 01 01 14 147 48 38 23 00 63 03 
+	1fd0: 04 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 
+	1fe0: 14 146 48 37 23 00 14 156 44 95 01 01 14 215 48 38 
+	1ff0: 11 00 14 156 44 98 01 01 14 215 48 23 10 00 02 02 
+	2000: 193 69 102 64 02 96 63 00 14 148 19 118 00 14 26 44 
+	2010: 95 01 01 14 149 48 38 95 00 14 159 44 95 01 01 14 
+	2020: 219 48 38 83 00 14 161 44 95 01 01 14 218 48 37 11 
+	2030: 00 14 161 44 95 01 01 14 150 48 38 59 00 14 118 44 
+	2040: 95 01 01 14 150 48 38 23 00 63 03 04 211 00 38 15 
+	2050: 00 02 02 195 52 14 120 07 134 00 03 14 118 48 37 23 
+	2060: 00 14 203 44 95 01 01 14 218 48 38 11 00 14 203 44 
+	2070: 98 01 01 14 218 48 23 10 00 02 02 193 69 102 64 02 
+	2080: 96 63 00 14 102 19 82 00 14 26 44 95 01 01 14 24 
+	2090: 48 38 59 00 14 159 44 95 01 01 14 220 48 38 47 00 
+	20a0: 14 161 44 95 01 01 14 221 48 38 35 00 14 118 44 95 
+	20b0: 01 01 14 151 48 38 23 00 63 03 04 211 00 38 15 00 
+	20c0: 02 02 195 52 14 120 07 134 00 03 14 118 48 23 10 00 
+	20d0: 02 02 193 69 102 64 02 96 63 00 14 153 19 129 00 14 
+	20e0: 26 44 95 01 01 14 154 19 14 00 14 26 44 94 01 01 
+	20f0: 11 02 102 64 02 96 14 26 44 95 01 01 14 154 48 38 
+	2100: 83 00 14 159 44 95 01 01 14 222 48 38 71 00 14 161 
+	2110: 44 95 01 01 14 157 48 37 11 00 14 161 44 95 01 01 
+	2120: 14 223 48 38 47 00 14 199 44 95 01 01 14 223 48 38 
+	2130: 11 00 14 199 44 98 01 01 14 223 48 37 23 00 14 156 
+	2140: 44 95 01 01 14 157 48 38 11 00 14 156 44 98 01 01 
+	2150: 14 157 48 23 10 00 02 02 193 69 102 64 02 96 63 00 
+	2160: 14 96 19 108 00 14 26 44 95 01 01 14 158 19 17 00 
+	2170: 02 02 193 69 102 14 143 44 235 00 01 99 64 02 96 14 
+	2180: 26 44 95 01 01 14 158 48 38 59 00 14 159 44 95 01 
+	2190: 01 14 160 48 38 47 00 14 161 44 95 01 01 14 162 48 
+	21a0: 38 35 00 14 163 44 95 01 01 14 162 48 38 23 00 63 
+	21b0: 03 04 211 00 38 15 00 02 02 195 52 14 120 07 134 00 
+	21c0: 03 14 163 48 23 10 00 02 02 193 69 102 64 02 96 63 
+	21d0: 00 14 99 19 105 00 14 26 44 95 01 01 14 165 19 14 
+	21e0: 00 14 26 44 94 01 01 11 02 102 64 02 96 14 26 44 
+	21f0: 95 01 01 14 165 48 38 59 00 14 159 44 95 01 01 14 
+	2200: 160 48 38 47 00 14 161 44 95 01 01 14 164 48 38 35 
+	2210: 00 14 146 44 95 01 01 14 164 48 38 23 00 63 03 04 
+	2220: 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 14 
+	2230: 146 48 23 10 00 02 02 193 69 102 64 02 96 63 00 14 
+	2240: 166 19 82 00 14 26 44 95 01 01 14 167 48 38 59 00 
+	2250: 14 159 44 95 01 01 14 224 48 38 47 00 14 161 44 95 
+	2260: 01 01 14 225 48 38 35 00 14 118 44 95 01 01 14 225 
+	2270: 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 
+	2280: 14 120 07 134 00 03 14 118 48 23 10 00 02 02 193 69 
+	2290: 102 64 02 96 63 00 14 168 19 141 00 14 26 44 95 01 
+	22a0: 01 14 169 19 14 00 14 26 44 94 01 01 11 02 102 64 
+	22b0: 02 96 14 26 44 95 01 01 14 169 48 38 95 00 14 159 
+	22c0: 44 95 01 01 14 226 48 38 83 00 14 161 44 95 01 01 
+	22d0: 14 169 48 37 11 00 14 161 44 95 01 01 14 170 48 38 
+	22e0: 59 00 14 136 44 95 01 01 14 170 48 38 23 00 63 03 
+	22f0: 04 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 
+	2300: 14 136 48 37 23 00 14 203 44 95 01 01 14 169 48 38 
+	2310: 11 00 14 203 44 98 01 01 14 169 48 23 10 00 02 02 
+	2320: 193 69 102 64 02 96 63 00 14 171 19 105 00 14 26 44 
+	2330: 95 01 01 14 172 19 14 00 14 26 44 94 01 01 11 02 
+	2340: 102 64 02 96 14 26 44 95 01 01 14 172 48 38 59 00 
+	2350: 14 159 44 95 01 01 14 227 48 38 47 00 14 161 44 95 
+	2360: 01 01 14 173 48 38 35 00 14 146 44 95 01 01 14 173 
+	2370: 48 38 23 00 63 03 04 211 00 38 15 00 02 02 195 52 
+	2380: 14 120 07 134 00 03 14 146 48 23 10 00 02 02 193 69 
+	2390: 102 64 02 96 63 00 14 174 19 105 00 14 26 44 95 01 
+	23a0: 01 14 175 19 14 00 14 26 44 94 01 01 11 02 102 64 
+	23b0: 02 96 14 26 44 95 01 01 14 175 48 38 59 00 14 159 
+	23c0: 44 95 01 01 14 228 48 38 47 00 14 161 44 95 01 01 
+	23d0: 14 229 48 38 35 00 14 118 44 95 01 01 14 176 48 38 
+	23e0: 23 00 63 03 04 211 00 38 15 00 02 02 195 52 14 120 
+	23f0: 07 134 00 03 14 118 48 23 10 00 02 02 193 69 102 64 
+	2400: 02 96 63 00 14 177 19 93 00 14 26 44 95 01 01 14 
+	2410: 178 19 14 00 14 26 44 94 01 01 11 02 102 64 02 96 
+	2420: 14 26 44 95 01 01 14 178 48 38 47 00 14 159 44 95 
+	2430: 01 01 14 230 48 38 35 00 14 161 44 95 01 01 14 180 
+	2440: 48 38 23 00 14 179 44 95 01 01 14 180 48 38 11 00 
+	2450: 14 179 44 98 01 01 14 180 48 23 10 00 02 02 193 69 
+	2460: 102 64 02 96 63 00 14 181 19 16 01 14 26 44 95 01 
+	2470: 01 14 182 19 170 00 14 26 44 95 01 01 14 182 19 17 
+	2480: 00 02 02 193 69 102 14 130 44 235 00 01 99 64 02 96 
+	2490: 14 203 44 95 01 01 14 182 48 38 11 00 14 203 44 98 
+	24a0: 01 01 14 182 48 23 28 00 02 02 193 74 102 14 130 44 
+	24b0: 235 00 01 99 14 182 16 44 94 01 02 11 10 102 99 64 
+	24c0: 02 96 14 26 44 95 01 01 14 182 48 38 71 00 14 159 
+	24d0: 44 95 01 01 14 231 48 38 59 00 14 161 44 95 01 01 
+	24e0: 14 232 48 38 47 00 14 183 44 95 01 01 14 184 48 38 
+	24f0: 11 00 14 183 44 98 01 01 14 184 48 37 23 00 14 203 
+	2500: 44 95 01 01 14 182 48 38 11 00 14 203 44 98 01 01 
+	2510: 14 182 48 23 10 00 02 02 193 69 102 64 02 96 14 26 
+	2520: 44 95 01 01 14 185 19 82 00 14 26 44 95 01 01 14 
+	2530: 185 48 38 59 00 14 159 44 95 01 01 14 233 48 38 47 
+	2540: 00 14 161 44 95 01 01 14 232 48 38 35 00 14 118 44 
+	2550: 95 01 01 14 186 48 38 23 00 63 03 04 211 00 38 15 
+	2560: 00 02 02 195 52 14 120 07 134 00 03 14 118 48 23 10 
+	2570: 00 02 02 193 69 102 64 02 96 63 00 14 187 19 184 00 
+	2580: 14 26 44 95 01 01 14 188 19 82 00 14 26 44 95 01 
+	2590: 01 14 188 48 38 59 00 14 159 44 95 01 01 14 188 48 
+	25a0: 38 47 00 14 161 44 95 01 01 14 188 48 38 35 00 14 
+	25b0: 118 44 95 01 01 14 188 48 38 23 00 63 03 04 211 00 
+	25c0: 38 15 00 02 02 195 52 14 120 07 134 00 03 14 118 48 
+	25d0: 23 10 00 02 02 193 69 102 64 02 96 14 26 44 95 01 
+	25e0: 01 14 189 19 82 00 14 26 44 95 01 01 14 189 48 38 
+	25f0: 59 00 14 159 44 95 01 01 14 234 48 38 47 00 14 161 
+	2600: 44 95 01 01 14 190 48 38 35 00 14 118 44 95 01 01 
+	2610: 14 190 48 38 23 00 63 03 04 211 00 38 15 00 02 02 
+	2620: 195 52 14 120 07 134 00 03 14 118 48 23 10 00 02 02 
+	2630: 193 69 102 64 02 96 60 00 14 192 19 82 00 14 26 44 
+	2640: 95 01 01 14 193 48 38 59 00 14 159 44 95 01 01 14 
+	2650: 235 48 38 47 00 14 161 44 95 01 01 14 194 48 38 35 
+	2660: 00 14 118 44 95 01 01 14 194 48 38 23 00 63 03 04 
+	2670: 211 00 38 15 00 02 02 195 52 14 120 07 134 00 03 14 
+	2680: 118 48 23 10 00 02 02 193 74 102 64 02 96 60 02 46 
+	2690: 47 14 26 44 95 01 01 98 01 02 02 26 65 44 94 01 
+	26a0: 02 11 02 102 11 10 101 98 00 63 01 04 207 00 38 07 
+	26b0: 00 02 02 193 10 49 23 33 00 02 02 193 65 44 94 01 
+	26c0: 02 11 10 101 64 00 96 14 85 63 01 99 14 88 03 136 
+	26d0: 00 07 134 00 03 64 00 96 63 00 14 89 44 235 00 01 
+	26e0: 101 11 100 102 64 00 96 14 90 44 235 00 01 23 13 00 
+	26f0: 02 02 192 67 101 11 10 102 64 00 96 14 91 44 235 00 
+	2700: 01 23 14 00 14 92 44 235 00 01 11 15 101 64 00 96 
+	2710: 14 93 44 235 00 01 98 02 14 94 44 235 00 01 14 95 
+	2720: 48 38 31 00 63 02 14 96 48 37 23 00 63 02 14 97 
+	2730: 48 37 15 00 63 02 14 98 48 37 07 00 63 02 14 99 
+	2740: 48 23 08 00 08 32 03 64 00 96 60 00 46 47 14 237 
+	2750: 44 235 00 01 11 30 102 14 130 44 235 00 01 11 20 101 
+	2760: 99 98 00 63 00 14 238 44 235 00 01 101 11 100 102 64 
+	2770: 00 96 14 239 44 235 00 01 23 13 00 02 02 192 67 101 
+	2780: 11 10 102 64 00 96 60 00 46 47 44 188 01 00 46 03 
+	2790: 136 00 113 64 00 01 23 16 00 09 128 132 30 00 00 00 
+	27a0: 00 00 98 00 25 13 00 09 64 66 15 00 00 00 00 00 
+	27b0: 98 00 14 21 44 235 00 01 60 00 99 46 03 136 00 113 
+	27c0: 64 00 01 23 16 00 09 128 132 30 00 00 00 00 00 98 
+	27d0: 00 25 13 00 09 64 66 15 00 00 00 00 00 98 00 14 
+	27e0: 240 44 235 00 01 60 00 99 46 44 192 01 00 14 20 44 
+	27f0: 235 00 01 100 98 01 02 02 193 64 50 23 13 00 03 136 
+	2800: 00 14 241 113 40 00 02 01 47 02 02 192 193 21 06 00 
+	2810: 63 01 98 00 02 02 20 192 44 239 00 02 01 60 00 46 
+	2820: 47 44 192 01 00 14 242 44 235 00 01 100 98 01 02 02 
+	2830: 193 64 50 23 03 00 47 02 02 192 193 21 06 00 63 01 
+	2840: 98 00 14 242 63 00 44 239 00 02 01 60 00 46 47 14 
+	2850: 89 44 235 00 01 14 92 44 235 00 01 51 46 14 238 44 
+	2860: 235 00 01 14 92 44 235 00 01 51 46 44 185 01 00 14 
+	2870: 243 44 235 00 01 100 64 01 95 15 50 23 03 00 47 02 
+	2880: 02 192 193 21 06 00 63 01 98 00 14 243 63 00 44 239 
+	2890: 00 02 01 44 200 01 00 01 60 00 46 47 44 188 01 00 
+	28a0: 14 244 44 235 00 01 100 64 01 95 15 50 23 03 00 47 
+	28b0: 02 02 192 193 21 06 00 63 01 98 00 14 244 63 00 44 
+	28c0: 239 00 02 01 44 200 01 00 01 60 00 46 47 14 245 44 
+	28d0: 236 00 01 63 00 19 04 00 16 46 03 136 00 14 246 02 
+	28e0: 02 192 30 07 134 00 02 99 14 247 99 02 03 192 52 35 
+	28f0: 07 134 00 03 99 14 248 99 14 249 99 14 250 99 113 40 
+	2900: 00 02 01 60 00 14 251 113 40 00 02 01 47 47 63 00 
+	2910: 44 222 01 01 24 03 00 47 14 252 02 02 192 30 07 134 
+	2920: 00 02 99 14 253 99 03 136 00 60 00 113 37 00 03 01 
+	2930: 16 46 47 02 03 192 52 35 07 134 00 03 44 99 00 01 
+	2940: 23 04 00 16 46 63 00 44 222 01 01 24 05 00 12 01 
+	2950: 46 03 136 00 14 254 02 02 192 30 07 134 00 02 99 14 
+	2960: 255 99 60 00 02 02 52 35 07 134 00 03 99 13 00 01 
+	2970: 99 14 250 99 113 40 00 02 01 16 46 47 60 00 44 222 
+	2980: 01 01 24 03 00 47 11 02 04 158 00 23 08 00 13 01 
+	2990: 01 25 05 00 13 02 01 04 172 00 01 16 46 47 63 00 
+	29a0: 44 222 01 01 24 05 00 12 01 46 11 02 04 158 00 43 
+	29b0: 254 59 00 69 00 40 00 13 03 01 13 04 01 13 05 01 
+	29c0: 63 00 07 134 00 03 99 13 06 01 99 03 136 00 63 00 
+	29d0: 113 37 00 03 01 25 31 00 13 07 01 03 136 00 63 00 
+	29e0: 113 37 00 03 01 25 15 00 25 12 00 07 00 00 00 00 
+	29f0: 00 00 00 00 00 16 46 47 03 136 00 98 01 63 01 04 
+	2a00: 23 01 109 37 08 00 63 00 04 23 01 109 23 04 00 16 
+	2a10: 46 63 01 14 70 13 08 01 07 134 00 03 23 04 00 16 
+	2a20: 46 63 01 04 23 01 23 09 00 63 00 44 184 01 01 01 
+	2a30: 02 02 193 52 13 09 01 07 134 00 03 02 02 193 52 13 
+	2a40: 10 01 07 134 00 03 99 03 240 00 08 32 28 99 21 15 
+	2a50: 00 13 11 01 02 02 193 192 113 37 00 03 01 47 16 46 
+	2a60: 47 60 00 13 13 01 13 12 01 07 134 00 03 01 47 03 
+	2a70: 136 00 98 02 02 02 194 52 13 14 01 07 134 00 03 109 
+	2a80: 37 20 00 02 02 194 52 13 15 01 07 134 00 03 64 01 
+	2a90: 95 04 207 00 109 23 04 00 16 46 60 01 13 16 01 05 
+	2aa0: 148 00 98 00 63 00 04 144 00 98 04 60 04 11 05 21 
+	2ab0: 06 00 11 05 98 04 15 98 03 25 19 00 63 02 13 17 
+	2ac0: 01 02 02 195 192 71 07 134 00 03 01 35 03 33 03 04 
+	2ad0: 20 00 16 46 47 03 136 00 98 05 02 02 197 52 13 18 
+	2ae0: 01 02 02 197 52 13 19 01 07 134 00 03 99 07 134 00 
+	2af0: 03 98 00 63 00 04 207 00 24 03 00 47 60 00 13 16 
+	2b00: 01 05 148 00 98 01 15 98 03 25 136 00 63 05 13 20 
+	2b10: 01 07 134 00 02 109 37 11 00 63 05 13 21 01 07 134 
+	2b20: 00 02 23 05 00 25 118 00 02 02 195 193 71 13 22 01 
+	2b30: 05 148 00 98 02 63 02 04 144 00 11 02 19 68 00 15 
+	2b40: 98 04 25 47 00 63 05 13 20 01 07 134 00 02 109 37 
+	2b50: 11 00 63 05 13 21 01 07 134 00 02 23 05 00 25 31 
+	2b60: 00 63 05 13 17 01 02 02 64 194 71 07 134 00 03 01 
+	2b70: 35 04 02 03 196 65 194 71 04 137 00 29 55 00 25 17 
+	2b80: 00 63 05 13 17 01 02 02 64 194 71 07 134 00 03 01 
+	2b90: 35 03 02 02 195 193 04 144 00 29 142 00 60 05 13 24 
+	2ba0: 01 13 23 01 15 07 134 00 04 01 16 46 47 03 136 00 
+	2bb0: 04 26 01 23 03 00 47 03 240 00 09 254 255 255 255 00 
+	2bc0: 00 00 00 104 98 00 02 02 186 192 22 21 00 63 00 68 
+	2bd0: 58 00 97 16 68 56 00 97 15 68 55 00 97 25 06 00 
+	2be0: 68 56 00 54 02 02 184 94 21 20 00 15 68 56 00 97 
+	2bf0: 13 25 01 44 235 00 01 24 03 00 47 16 46 47 47 03 
+	2c00: 240 00 98 02 02 02 187 194 21 11 00 63 00 68 59 00 
+	2c10: 96 25 11 00 02 02 194 192 99 68 59 00 97 60 01 68 
+	2c20: 60 00 97 47 03 136 00 04 26 01 23 03 00 47 44 199 
+	2c30: 01 00 23 12 00 13 26 01 113 47 00 01 01 16 46 03 
+	2c40: 240 00 09 254 255 255 255 00 00 00 00 104 98 01 02 02 
+	2c50: 187 193 21 30 00 67 60 00 13 27 01 99 02 02 187 193 
+	2c60: 100 113 54 00 01 99 13 28 01 99 113 47 00 01 01 16 
+	2c70: 46 60 00 24 03 00 47 02 02 186 193 22 21 00 63 01 
+	2c80: 68 58 00 97 16 68 55 00 97 15 68 56 00 97 25 06 
+	2c90: 00 68 55 00 54 02 02 183 68 21 22 00 11 60 13 29 
+	2ca0: 01 44 231 01 02 01 13 30 01 113 47 00 01 01 16 46 
+	2cb0: 47 47 67 59 00 03 240 00 50 23 03 00 47 63 00 24 
+	2cc0: 10 00 15 68 59 00 97 25 09 00 63 00 68 59 00 86 
+	2cd0: 01 67 59 00 03 240 00 50 23 13 00 03 136 00 13 31 
+	2ce0: 01 113 40 00 02 01 47 03 136 00 98 03 63 01 24 07 
+	2cf0: 00 67 64 00 98 01 63 01 24 07 00 13 32 01 98 01 
+	2d00: 67 64 00 38 12 00 03 161 00 113 26 00 01 63 01 48 
+	2d10: 23 83 00 02 02 194 124 101 68 65 00 96 63 00 38 04 
+	2d20: 00 63 02 23 63 00 14 77 14 80 13 33 01 15 05 197 
+	2d30: 00 13 34 01 13 35 01 14 30 44 235 00 01 99 13 36 
+	2d40: 01 99 02 03 192 52 30 07 134 00 03 99 13 37 01 99 
+	2d50: 02 02 194 124 101 113 54 00 01 99 13 38 01 99 07 134 
+	2d60: 00 05 01 47 67 64 00 38 22 00 67 64 00 63 01 48 
+	2d70: 38 13 00 03 161 00 113 26 00 01 67 64 00 49 23 109 
+	2d80: 00 63 01 13 39 01 63 03 07 134 00 03 01 63 03 14 
+	2d90: 72 13 40 01 67 64 00 07 134 00 04 01 63 03 13 41 
+	2da0: 01 67 64 00 07 134 00 03 01 13 42 01 63 03 113 37 
+	2db0: 00 02 01 63 03 04 174 00 23 12 00 63 03 13 43 01 
+	2dc0: 07 134 00 02 01 14 77 14 80 13 33 01 15 05 197 00 
+	2dd0: 13 34 01 13 35 01 14 30 44 235 00 01 99 13 44 01 
+	2de0: 99 07 134 00 05 01 44 174 01 00 01 47 63 01 13 45 
+	2df0: 01 63 03 07 134 00 03 01 63 00 23 81 00 14 77 14 
+	2e00: 80 13 33 01 15 05 197 00 13 34 01 13 35 01 14 30 
+	2e10: 44 235 00 01 99 13 46 01 99 02 03 192 52 30 07 134 
+	2e20: 00 03 99 13 47 01 99 63 01 13 48 01 07 134 00 02 
+	2e30: 99 13 49 01 99 13 50 01 99 02 02 194 124 101 113 54 
+	2e40: 00 01 99 13 38 01 99 07 134 00 05 01 63 03 14 72 
+	2e50: 13 40 01 67 64 00 07 134 00 04 01 63 03 13 41 01 
+	2e60: 63 01 07 134 00 03 01 60 01 68 64 00 97 60 02 11 
+	2e70: 60 101 68 65 00 96 44 174 01 00 01 13 51 01 63 03 
+	2e80: 113 37 00 02 01 63 03 14 72 13 52 01 16 07 134 00 
+	2e90: 04 01 63 03 14 72 13 53 01 16 07 134 00 04 01 63 
+	2ea0: 03 14 72 13 54 01 16 07 134 00 04 01 63 03 14 72 
+	2eb0: 13 55 01 16 07 134 00 04 01 63 03 14 72 13 56 01 
+	2ec0: 15 07 134 00 04 01 63 03 14 72 13 57 01 15 07 134 
+	2ed0: 00 04 01 63 03 13 58 01 13 52 01 15 07 134 00 04 
+	2ee0: 01 63 03 04 174 00 23 12 00 63 03 13 43 01 07 134 
+	2ef0: 00 02 01 47 03 136 00 98 02 63 01 23 136 00 02 02 
+	2f00: 193 124 101 68 65 00 86 01 67 65 00 15 21 119 00 63 
+	2f10: 00 23 66 00 14 77 14 80 13 33 01 15 05 197 00 13 
+	2f20: 34 01 13 35 01 14 30 44 235 00 01 99 13 36 01 99 
+	2f30: 02 03 192 52 30 07 134 00 03 99 13 59 01 99 02 02 
+	2f40: 193 124 101 113 54 00 01 99 13 38 01 99 07 134 00 05 
+	2f50: 01 25 49 00 14 77 14 80 13 33 01 15 05 197 00 13 
+	2f60: 34 01 13 35 01 14 30 44 235 00 01 99 13 60 01 99 
+	2f70: 02 02 193 124 101 113 54 00 01 99 13 38 01 99 07 134 
+	2f80: 00 05 01 47 15 68 65 00 97 67 64 00 13 61 01 63 
+	2f90: 02 07 134 00 03 24 03 00 47 15 68 64 00 97 63 02 
+	2fa0: 04 174 00 23 15 00 63 02 13 43 01 07 134 00 02 01 
+	2fb0: 25 12 00 63 02 13 62 01 07 134 00 02 01 44 174 01 
+	2fc0: 00 01 63 00 23 51 00 14 77 14 80 13 33 01 15 05 
+	2fd0: 197 00 13 34 01 13 35 01 14 30 44 235 00 01 99 13 
+	2fe0: 46 01 99 02 02 192 30 07 134 00 02 99 13 63 01 99 
+	2ff0: 07 134 00 05 01 25 35 00 14 77 14 80 13 33 01 15 
+	3000: 05 197 00 13 34 01 13 35 01 14 30 44 235 00 01 99 
+	3010: 13 64 01 99 07 134 00 05 01 47 67 64 00 23 42 00 
+	3020: 13 65 01 13 66 01 44 237 00 02 01 15 44 183 00 01 
+	3030: 01 13 54 01 15 44 221 00 02 01 03 136 00 04 174 00 
+	3040: 23 07 00 44 158 00 00 01 60 00 45 00 194 00 01 01 
+	3050: 44 174 01 00 01 47 03 136 00 98 00 63 00 14 72 13 
+	3060: 54 01 15 07 134 00 04 01 63 00 14 72 13 52 01 15 
+	3070: 07 134 00 04 01 63 00 14 72 13 57 01 15 07 134 00 
+	3080: 04 01 60 00 04 174 00 24 03 00 47 67 65 00 15 21 
+	3090: 33 00 03 161 00 38 13 00 03 161 00 113 26 00 01 67 
+	30a0: 64 00 49 23 12 00 02 03 64 64 64 44 232 01 03 01 
+	30b0: 47 02 02 64 64 44 236 01 02 01 47 67 57 00 46 16 
+	30c0: 68 57 00 97 47 15 68 57 00 97 47 03 171 00 46 67 
+	30d0: 63 00 46 13 67 01 44 235 00 01 43 47 27 00 67 00 
+	30e0: 23 00 08 16 39 46 08 88 27 46 08 136 19 46 08 160 
+	30f0: 15 46 47 25 42 00 200 250 92 162 173 00 00 00 15 00 
+	3100: 104 146 46 163 173 00 00 00 11 00 232 147 46 163 173 00 
+	3110: 00 00 07 00 08 155 46 163 173 00 00 00 19 00 47 02 
+	3120: 02 191 64 53 38 10 00 67 63 00 44 233 01 00 52 46 
+	3130: 60 00 68 61 00 97 47 60 00 68 62 00 97 44 233 01 
+	3140: 00 68 63 00 97 47 02 02 192 189 19 07 00 15 68 61 
+	3150: 00 97 60 00 67 62 00 19 07 00 15 68 62 00 97 47 
+	3160: 02 02 192 189 48 37 07 00 02 02 192 190 48 23 04 00 
+	3170: 16 46 47 02 02 192 64 20 08 00 13 72 01 04 36 01 
+	3180: 44 233 01 00 98 01 63 00 68 63 00 96 02 02 191 193 
+	3190: 21 16 00 02 02 193 191 100 64 00 96 63 01 68 63 00 
+	31a0: 97 60 00 46 47 02 02 192 64 20 08 00 13 72 01 04 
+	31b0: 36 01 02 02 192 191 21 15 00 67 63 00 98 00 15 68 
+	31c0: 63 00 97 25 09 00 63 00 68 63 00 86 01 60 00 46 
+	31d0: 47 60 00 04 41 01 47 14 37 44 235 00 01 15 53 46 
+	31e0: 63 00 04 207 00 23 09 00 63 00 98 01 25 25 00 63 
+	31f0: 00 04 211 00 23 16 00 02 03 192 52 35 07 134 00 03 
+	3200: 98 01 25 03 00 47 13 73 01 60 01 99 44 235 00 01 
+	3210: 23 04 00 16 46 47 47 15 98 04 44 242 00 00 64 01 
+	3220: 95 04 13 01 23 63 00 63 01 04 200 00 14 34 17 01 
+	3230: 00 100 30 00 03 25 43 00 63 03 04 144 00 64 04 96 
+	3240: 02 02 195 193 71 04 204 00 23 13 00 02 02 195 193 71 
+	3250: 64 04 96 25 13 00 02 02 195 193 71 04 144 00 64 04 
+	3260: 96 31 42 00 44 115 01 00 64 01 95 04 13 01 23 57 
+	3270: 00 63 01 04 200 00 30 00 03 25 43 00 63 03 04 144 
+	3280: 00 64 04 96 02 02 195 193 71 04 204 00 23 13 00 02 
+	3290: 02 195 193 71 64 04 96 25 13 00 02 02 195 193 71 04 
+	32a0: 144 00 64 04 96 31 42 00 44 167 01 00 64 02 95 04 
+	32b0: 210 00 23 55 00 63 02 30 00 03 25 44 00 63 03 04 
+	32c0: 144 00 64 04 96 63 03 04 207 00 23 28 00 15 98 06 
+	32d0: 25 12 00 02 02 198 195 71 64 04 96 35 06 02 02 198 
+	32e0: 195 04 144 00 29 18 00 31 43 00 13 74 01 63 04 07 
+	32f0: 12 01 02 98 05 60 04 11 26 103 11 97 99 15 64 05 
+	3300: 72 97 60 00 24 11 00 02 02 197 64 05 238 00 98 05 
+	3310: 60 05 46 47 03 136 00 113 61 00 01 15 21 03 00 47 
+	3320: 14 10 98 00 13 75 01 44 235 00 01 23 42 00 13 76 
+	3330: 01 44 235 00 01 04 207 00 23 23 00 13 77 01 13 76 
+	3340: 01 44 235 00 01 99 13 78 01 99 64 00 96 25 08 00 
+	3350: 13 79 01 64 00 96 13 80 01 44 235 00 01 13 81 01 
+	3360: 44 235 00 01 100 98 01 14 20 44 235 00 01 13 82 01 
+	3370: 44 235 00 01 100 98 02 14 242 44 235 00 01 13 83 01 
+	3380: 44 235 00 01 100 98 03 14 39 44 235 00 01 13 84 01 
+	3390: 44 235 00 01 100 98 04 13 85 01 44 235 00 01 13 86 
+	33a0: 01 44 235 00 01 100 98 05 03 240 00 13 87 01 44 235 
+	33b0: 00 01 100 98 06 02 02 197 64 20 08 00 08 232 03 64 
+	33c0: 05 96 02 02 198 124 21 49 00 13 88 01 63 06 113 54 
+	33d0: 00 01 63 04 113 54 00 01 02 03 197 193 124 101 63 06 
+	33e0: 102 02 02 194 124 101 63 06 102 02 02 195 124 101 63 06 
+	33f0: 102 07 12 01 07 64 00 96 60 00 46 47 45 00 166 01 
+	3400: 00 01 15 68 51 00 97 15 68 52 00 97 15 68 54 00 
+	3410: 97 15 68 55 00 97 15 68 56 00 97 15 68 57 00 97 
+	3420: 15 68 58 00 97 15 68 59 00 97 14 10 68 60 00 97 
+	3430: 15 68 63 00 97 15 68 64 00 97 15 68 65 00 97 47 

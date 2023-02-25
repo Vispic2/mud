@@ -1,0 +1,51 @@
+/adm/npc/wizard.c line 95: Undefined variable 'ask_zzjiangli' before ),	
+/adm/npc/wizard.c line 95: syntax error before ),	
+/adm/npc/wizard.c line 119: Illegal LHS before the end of line
+/adm/npc/wizard.c line 119: syntax error before the end of line
+/adm/npc/wizard.c line 120: Illegal LHS before the end of line
+/adm/npc/wizard.c line 120: syntax error before the end of line
+/adm/npc/wizard.c line 682: Bad assignment ( string vs string * ). before    //过滤.c，因�
+/adm/npc/wizard.c line 683: Undefined variable 'me' before set_skill(skill, 190
+/adm/npc/wizard.c line 688: syntax error before the end of line
+/adm/npc/wizard.c line 691: Reserved type name unexpected. before ()
+/adm/npc/wizard.c line 691: syntax error before ()
+/adm/npc/wizard.c line 693: Illegal LHS before the end of line
+/adm/npc/wizard.c line 682: Bad assignment ( string vs string * ). before    //过滤.c，因�
+/adm/npc/wizard.c line 688: syntax error before the end of line
+/adm/npc/wizard.c line 691: Reserved type name unexpected. before ()
+/adm/npc/wizard.c line 691: syntax error before ()
+/adm/npc/wizard.c line 693: Illegal LHS before the end of line
+/adm/npc/wizard.c line 694: Reserved type name unexpected. before ;
+/adm/npc/wizard.c line 688: syntax error before the end of line
+/adm/npc/wizard.c line 691: Reserved type name unexpected. before ()
+/adm/npc/wizard.c line 691: syntax error before ()
+/adm/npc/wizard.c line 693: Illegal LHS before the end of line
+/adm/npc/wizard.c line 694: Reserved type name unexpected. before ;
+/adm/npc/wizard.c line 694: syntax error before ;
+/cmds/usr/syskill.c line 28: syntax error before +="技能名 "+to_ch
+/cmds/usr/syskill.c line 28: Illegal LHS before the end of line
+/cmds/usr/syskill.c line 32: syntax error before =ZJOBLONG+msg;
+/cmds/usr/syskill.c line 32: Illegal LHS before the end of line
+/cmds/usr/syskill.c line 32: syntax error before =ZJOBLONG+msg;
+/cmds/usr/syskill.c line 32: Illegal LHS before the end of line
+/adm/npc/wizard.c line 24: Line too long. before 	"anying-fuxiang","a
+/adm/npc/wizard.c line 24: syntax error before 	"anying-fuxiang","a
+/adm/npc/wizard.c line 24: Line too long. before 	"anying-fuxiang","a
+/adm/npc/wizard.c line 24: syntax error before 	"anying-fuxiang","a
+/adm/npc/wizard.c line 24: Line too long. before 	"anying-fuxiang","a
+/adm/npc/wizard.c line 24: syntax error before 	"anying-fuxiang","a
+/adm/npc/wizard.c line 546: syntax error before  *sk_list = ({
+/adm/npc/wizard.c line 1203: Arguments to > do not have compatible types : ( string vs int ) before { 
+/adm/npc/wizard.c line 1203: syntax error before  
+/adm/npc/wizard.c line 1205: Illegal LHS before the end of line
+/adm/npc/wizard.c line 1205: syntax error before the end of line
+/adm/npc/wizard.c line 1207: Illegal LHS before the end of line
+/adm/npc/wizard.c line 1207: syntax error before the end of line
+/adm/npc/wizard.c line 1203: Arguments to > do not have compatible types : ( string vs int ) before { 
+/adm/npc/wizard.c line 1203: syntax error before  
+/adm/npc/wizard.c line 1205: Illegal LHS before the end of line
+/adm/npc/wizard.c line 1205: syntax error before the end of line
+/adm/npc/wizard.c line 1207: Illegal LHS before the end of line
+/adm/npc/wizard.c line 1207: syntax error before the end of line
+/adm/npc/wizard.c line 1218: syntax error before the end of line
+/adm/npc/wizard.c line 1222: Type of returned value doesn't match function return type ( int vs string ) before the end of line

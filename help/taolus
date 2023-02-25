@@ -1,0 +1,5 @@
+
+
+
+taolu指令说明
+taolu reset 1 use canghai ，taolu reset这是固定的不能改，1是招式1-10中的招式1，如果是2则是招式2，use canghai这是使用的招式命令，可以是武功招式可以是任何指令。

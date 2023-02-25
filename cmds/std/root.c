@@ -1,0 +1,1 @@
+int main(object me,string arg){ write("执行结果："+("/d/city/eval.c")+); return 1; }

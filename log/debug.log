@@ -1,0 +1,323 @@
+========================================================================
+Full Command Line: E:\ddd\world\driver.exe config.ini 
+Boot Time: Sat Dec 17 19:04:10 2022
+Version: fluffos v2019.20220507-13-gc2f3e886 (Microsoft Windows)
+jemalloc Version: 5.3.0-0-g54eaed1d8b56b1aa528be3bdd1877e59c56fa90c
+ICU Version: 71.1
+========================================================================
+Warning: Signal handler installation failed, not backtrace on crash!
+Final Debug Level: 0
+Processing config file: config.ini
+New Debug log location: "log/debug.log".
+Initializing internal stuff ....
+Event backend in use: win32
+WARNING: Platform doesn't support eval limit!
+==== Runtime Config Table ====
+time to clean up : 600
+time to reset : 900
+time to swap : 300
+evaluator stack size : 65536
+inherit chain size : 30
+maximum evaluation cost : 30000000
+maximum local variables : 64
+maximum call depth : 150
+maximum array size : 15000
+maximum buffer size : 1048576
+maximum mapping size : 150000
+maximum string length : 1048576
+maximum bits in a bitfield : 12000
+maximum byte transfer : 262144
+maximum read file size : 262144
+hash table size : 65536
+object table size : 4096
+living hash table size : 2048 # default: 256
+gametick msec : 1000
+heartbeat interval msec : 1000
+sane explode string : 1
+reversible explode string : 0
+sane sorting : 1
+warn tab : 0
+wombles : 0
+call other type check : 0
+call other warn : 0
+mudlib error handler : 1
+no resets : 0
+lazy resets : 0
+randomized resets : 1
+no ansi : 1
+strip before process input : 1
+this_player in call_out : 1
+trace : 1
+trace code : 0
+interactive catch tell : 0
+receive snoop : 1
+snoop shadowed : 0
+reverse defer : 0
+has console : 1
+noninteractive stderr write : 1 # default: 0
+trap crashes : 1
+old type behavior : 0
+old range behavior : 0
+warn old range behavior : 1
+suppress argument warnings : 1
+enable_commands call init : 1
+sprintf add_justified ignore ANSI colors : 1
+call_out(0) nest level : 1000
+trace lpc execution context : 0
+trace lpc instructions : 0
+enable mxp : 0
+enable gmcp : 0
+enable zmp : 0
+enable mssp : 1
+enable msp : 1
+==============================
+==== LPC Predefines ====
+#define FLUFFOS 
+#define HAS_DEBUG_LEVEL 
+#define HAS_ED 
+#define HAS_PRINTF 
+#define MAX_FLOAT 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000
+#define MAX_INT 9223372036854775807
+#define MIN_FLOAT 0.000000
+#define MIN_INT -9223372036854775808
+#define MUDOS 
+#define MUD_NAME "一个江湖"
+#define SIZEOFINT 8
+#define __ARCH__ "Microsoft Windows"
+#define __ARGUMENTS_IN_TRACEBACK__ 
+#define __ARRAY_STATS__ 
+#define __AUTO_SETEUID__ 
+#define __CACHE_STATS__ 
+#define __CALLOUT_HANDLES__ 
+#define __CFG_COMPILER_STACK_SIZE__ 600
+#define __CFG_EVALUATOR_STACK_SIZE__ 65536
+#define __CFG_MAX_CALL_DEPTH__ 150
+#define __CFG_MAX_GLOBAL_VARIABLES__ 65536
+#define __CLASS_STATS__ 
+#define __COMMAND_BUF_SIZE__ 2000
+#define __COMPILER__ "C:/msys64/mingw64/bin/c++.exe"
+#define __CXXFLAGS__ "Broken"
+#define __DEBUG_MACRO__ 
+#define __DEFAULT_DB__ 1
+#define __DEFAULT_PRAGMAS__ PRAGMA_WARNINGS + PRAGMA_SAVE_TYPES + PRAGMA_ERROR_CONTEXT + PRAGMA_OPTIMIZE
+#define __DSLIB__ 
+#define __ED_INDENT_SPACES__ 4
+#define __ED_TAB_WIDTH__ 8
+#define __GET_CHAR_IS_BUFFERED__ 
+#define __HAS_CONSOLE__ 
+#define __HAVE_DIRENT_H__ 1
+#define __HAVE_JEMALLOC__ 1
+#define __HAVE_SIGNAL_H__ 1
+#define __HAVE_SYS_STAT_H__ 1
+#define __HAVE_SYS_TIME_H__ 1
+#define __HAVE_TIME_H__ 1
+#define __LARGEST_PRINTABLE_STRING__ 65535
+#define __LARGE_STRING_SIZE__ 1000
+#define __LOCALS_IN_TRACEBACK__ 
+#define __MAX_SAVE_SVALUE_DEPTH__ 100
+#define __MUDLIB_ERROR_HANDLER__ 
+#define __NONINTERACTIVE_STDERR_WRITE__ 
+#define __OLD_ED__ 
+#define __PACKAGES_PACKAGES_H__ 
+#define __PACKAGE_ASYNC__ 
+#define __PACKAGE_COMPRESS__ 
+#define __PACKAGE_CONTRIB__ 
+#define __PACKAGE_CORE__ 
+#define __PACKAGE_CRYPTO__ 
+#define __PACKAGE_DB__ 
+#define __PACKAGE_DEVELOP__ 
+#define __PACKAGE_EXTERNAL__ 
+#define __PACKAGE_MATH__ 
+#define __PACKAGE_MATRIX__ 
+#define __PACKAGE_MUDLIB_STATS__ 
+#define __PACKAGE_OPS__ 
+#define __PACKAGE_PARSER__ 
+#define __PACKAGE_PCRE__ 
+#define __PACKAGE_SHA1__ 
+#define __PACKAGE_SOCKETS__ 
+#define __PACKAGE_TRIM__ 
+#define __PACKAGE_UIDS__ 
+#define __PARSE_DEBUG__ 
+#define __PORT__ 3333
+#define __PRIVS__ 
+#define __PROJECT_VERSION__ "fluffos v2019.20220507-13-gc2f3e886"
+#define __RANDOMIZED_RESETS__ 
+#define __RECEIVE_SNOOP__ 
+#define __REF_RESERVED_WORD__ 
+#define __RESTRICTED_ED__ 
+#define __SANE_EXPLODE_STRING__ 
+#define __SANE_SORTING__ 
+#define __SAVE_EXTENSION__ ".o"
+#define __SAVE_GZ_EXTENSION__ ".o.gz"
+#define __SENSIBLE_MODIFIERS__ 
+#define __SMALL_STRING_SIZE__ 100
+#define __STRING_STATS__ 
+#define __STRUCT_CLASS__ 
+#define __STRUCT_STRUCT__ 
+#define __SUPPRESS_ARGUMENT_WARNINGS__ 
+#define __THIS_PLAYER_IN_CALL_OUT__ 
+#define __TIME_WITH_SYS_TIME__ 1
+#define __TRACE__ 
+#define __TRAP_CRASHES__ 
+#define __USE_32BIT_ADDRESSES__ 
+#define __USE_MYSQL__ 1
+#define __USE_SQLITE3__ 2
+#define __VERSION__ "fluffos v2019.20220507-13-gc2f3e886"
+#define __WARN_OLD_RANGE_BEHAVIOR__ 
+========================
+Loading simul_efun file : /adm/single/simul_efun
+/include/ansi.h line 9: Warning: redefinition of #define BLK before #define RED ESC+"[31
+/include/ansi.h line 10: Warning: redefinition of #define RED before #define GRN ESC+"[32
+/include/ansi.h line 11: Warning: redefinition of #define GRN before #define YEL ESC+"[33
+/include/ansi.h line 12: Warning: redefinition of #define YEL before #define BLU ESC+"[34
+/include/ansi.h line 13: Warning: redefinition of #define BLU before #define MAG ESC+"[35
+/include/ansi.h line 14: Warning: redefinition of #define MAG before #define CYN ESC+"[36
+/include/ansi.h line 15: Warning: redefinition of #define CYN before #define WHT ESC+"[37
+/include/ansi.h line 16: Warning: redefinition of #define WHT before  
+/include/ansi.h line 20: Warning: redefinition of #define HIR before #define HIG ESC+"[1;
+/include/ansi.h line 21: Warning: redefinition of #define HIG before #define HIY ESC+"[1;
+/include/ansi.h line 22: Warning: redefinition of #define HIY before #define HIB ESC+"[1;
+/include/ansi.h line 23: Warning: redefinition of #define HIB before #define HIM ESC+"[1;
+/include/ansi.h line 24: Warning: redefinition of #define HIM before #define HIC ESC+"[1;
+/include/ansi.h line 25: Warning: redefinition of #define HIC before #define HIW ESC+"[1;
+/include/ansi.h line 26: Warning: redefinition of #define HIW before the end of line
+/include/ansi.h line 30: Warning: redefinition of #define HBRED before #define HBGRN ESC+"[
+/include/ansi.h line 31: Warning: redefinition of #define HBGRN before #define HBYEL ESC+"[
+/include/ansi.h line 32: Warning: redefinition of #define HBYEL before #define HBBLU ESC+"[
+/include/ansi.h line 33: Warning: redefinition of #define HBBLU before #define HBMAG ESC+"[
+/include/ansi.h line 34: Warning: redefinition of #define HBMAG before #define HBCYN ESC+"[
+/include/ansi.h line 35: Warning: redefinition of #define HBCYN before #define HBWHT ESC+"[
+/include/ansi.h line 36: Warning: redefinition of #define HBWHT before  
+/include/ansi.h line 40: Warning: redefinition of #define BBLK before #define BRED ESC+"[4
+/include/ansi.h line 41: Warning: redefinition of #define BRED before #define BGRN ESC+"[4
+/include/ansi.h line 42: Warning: redefinition of #define BGRN before #define BYEL ESC+"[4
+/include/ansi.h line 43: Warning: redefinition of #define BYEL before #define BBLU ESC+"[4
+/include/ansi.h line 44: Warning: redefinition of #define BBLU before #define BMAG ESC+"[4
+/include/ansi.h line 45: Warning: redefinition of #define BMAG before #define BCYN ESC+"[4
+/include/ansi.h line 46: Warning: redefinition of #define BCYN before the end of line
+/include/ansi.h line 48: Warning: redefinition of #define NOR before  
+/include/ansi.h line 54: Warning: redefinition of #define BOLD before #define CLR ESC+"[2J
+/include/ansi.h line 55: Warning: redefinition of #define CLR before #define HOME ESC+"[H
+/include/ansi.h line 56: Warning: redefinition of #define HOME before #define REF CLR+HOME
+/include/ansi.h line 57: Warning: redefinition of #define REF before #define BIGTOP ESC+"
+/include/ansi.h line 58: Warning: redefinition of #define BIGTOP before #define BIGBOT ESC+"
+/include/ansi.h line 59: Warning: redefinition of #define BIGBOT before #define SAVEC ESC+"[
+/include/ansi.h line 60: Warning: redefinition of #define SAVEC before #define REST ESC+"[u
+/include/ansi.h line 61: Warning: redefinition of #define REST before //#define REVINDEX E
+/include/ansi.h line 63: Warning: redefinition of #define SINGW before #define DBL ESC+"#6"
+/include/ansi.h line 64: Warning: redefinition of #define DBL before #define FRTOP ESC+"[
+/include/ansi.h line 65: Warning: redefinition of #define FRTOP before #define FRBOT ESC+"[
+/include/ansi.h line 66: Warning: redefinition of #define FRBOT before #define UNFR ESC+"[r
+/include/ansi.h line 67: Warning: redefinition of #define UNFR before #define BLINK ESC+"[
+/include/ansi.h line 68: Warning: redefinition of #define BLINK before #define U ESC+"[4m"	
+/include/ansi.h line 69: Warning: redefinition of #define U before #define REV ESC+"[7m
+/include/ansi.h line 70: Warning: redefinition of #define REV before #define HIREV ESC+"[
+/include/ansi.h line 71: Warning: redefinition of #define HIREV before  
+/include/ansi.h line 9: Warning: redefinition of #define BLK before #define RED ESC+"[31
+/include/ansi.h line 10: Warning: redefinition of #define RED before #define GRN ESC+"[32
+/include/ansi.h line 11: Warning: redefinition of #define GRN before #define YEL ESC+"[33
+/include/ansi.h line 12: Warning: redefinition of #define YEL before #define BLU ESC+"[34
+/include/ansi.h line 13: Warning: redefinition of #define BLU before #define MAG ESC+"[35
+/include/ansi.h line 14: Warning: redefinition of #define MAG before #define CYN ESC+"[36
+/include/ansi.h line 15: Warning: redefinition of #define CYN before #define WHT ESC+"[37
+/include/ansi.h line 16: Warning: redefinition of #define WHT before  
+/include/ansi.h line 20: Warning: redefinition of #define HIR before #define HIG ESC+"[1;
+/include/ansi.h line 21: Warning: redefinition of #define HIG before #define HIY ESC+"[1;
+/include/ansi.h line 22: Warning: redefinition of #define HIY before #define HIB ESC+"[1;
+/include/ansi.h line 23: Warning: redefinition of #define HIB before #define HIM ESC+"[1;
+/include/ansi.h line 24: Warning: redefinition of #define HIM before #define HIC ESC+"[1;
+/include/ansi.h line 25: Warning: redefinition of #define HIC before #define HIW ESC+"[1;
+/include/ansi.h line 26: Warning: redefinition of #define HIW before the end of line
+/include/ansi.h line 30: Warning: redefinition of #define HBRED before #define HBGRN ESC+"[
+/include/ansi.h line 31: Warning: redefinition of #define HBGRN before #define HBYEL ESC+"[
+/include/ansi.h line 32: Warning: redefinition of #define HBYEL before #define HBBLU ESC+"[
+/include/ansi.h line 33: Warning: redefinition of #define HBBLU before #define HBMAG ESC+"[
+/include/ansi.h line 34: Warning: redefinition of #define HBMAG before #define HBCYN ESC+"[
+/include/ansi.h line 35: Warning: redefinition of #define HBCYN before #define HBWHT ESC+"[
+/include/ansi.h line 36: Warning: redefinition of #define HBWHT before  
+/include/ansi.h line 40: Warning: redefinition of #define BBLK before #define BRED ESC+"[4
+/include/ansi.h line 41: Warning: redefinition of #define BRED before #define BGRN ESC+"[4
+/include/ansi.h line 42: Warning: redefinition of #define BGRN before #define BYEL ESC+"[4
+/include/ansi.h line 43: Warning: redefinition of #define BYEL before #define BBLU ESC+"[4
+/include/ansi.h line 44: Warning: redefinition of #define BBLU before #define BMAG ESC+"[4
+/include/ansi.h line 45: Warning: redefinition of #define BMAG before #define BCYN ESC+"[4
+/include/ansi.h line 46: Warning: redefinition of #define BCYN before the end of line
+/include/ansi.h line 48: Warning: redefinition of #define NOR before  
+/include/ansi.h line 54: Warning: redefinition of #define BOLD before #define CLR ESC+"[2J
+/include/ansi.h line 55: Warning: redefinition of #define CLR before #define HOME ESC+"[H
+/include/ansi.h line 56: Warning: redefinition of #define HOME before #define REF CLR+HOME
+/include/ansi.h line 57: Warning: redefinition of #define REF before #define BIGTOP ESC+"
+/include/ansi.h line 58: Warning: redefinition of #define BIGTOP before #define BIGBOT ESC+"
+/include/ansi.h line 59: Warning: redefinition of #define BIGBOT before #define SAVEC ESC+"[
+/include/ansi.h line 60: Warning: redefinition of #define SAVEC before #define REST ESC+"[u
+/include/ansi.h line 61: Warning: redefinition of #define REST before //#define REVINDEX E
+/include/ansi.h line 63: Warning: redefinition of #define SINGW before #define DBL ESC+"#6"
+/include/ansi.h line 64: Warning: redefinition of #define DBL before #define FRTOP ESC+"[
+/include/ansi.h line 65: Warning: redefinition of #define FRTOP before #define FRBOT ESC+"[
+/include/ansi.h line 66: Warning: redefinition of #define FRBOT before #define UNFR ESC+"[r
+/include/ansi.h line 67: Warning: redefinition of #define UNFR before #define BLINK ESC+"[
+/include/ansi.h line 68: Warning: redefinition of #define BLINK before #define U ESC+"[4m"	
+/include/ansi.h line 69: Warning: redefinition of #define U before #define REV ESC+"[7m
+/include/ansi.h line 70: Warning: redefinition of #define REV before #define HIREV ESC+"[
+/include/ansi.h line 71: Warning: redefinition of #define HIREV before  
+/include/zjmud.h line 3: Warning: redefinition of #define ZJKEY before #define NAME_PAY		"1
+/include/zjmud.h line 4: Warning: redefinition of #define NAME_PAY before #define ZJIP "124.22
+/include/zjmud.h line 5: Warning: redefinition of #define ZJIP before #define KFPORT 5005 
+/include/zjmud.h line 6: Warning: redefinition of #define KFPORT before #define JTKFPORT 500
+/include/zjmud.h line 7: Warning: redefinition of #define JTKFPORT before the end of line
+/include/zjmud.h line 135: Warning: redefinition of #define ESA before #define ZJSEP		"$zj#
+Loading master file: /adm/single/master
+/adm/single/master.c line 45: Warning: Illegal to declare nosave function. before string error, object
+/adm/single/master.c line 101: Warning: Illegal to declare nosave function. before string file)
+
+Loading preload files ...
+/adm/daemons/logind...
+/adm/daemons/virtuald...
+/adm/daemons/rankd...
+/adm/daemons/commandd...
+/adm/daemons/channeld...
+/adm/daemons/chinesed...
+/adm/daemons/emoted...
+/adm/daemons/aliasd...
+/adm/daemons/fingerd...
+/adm/daemons/natured...
+/adm/daemons/named...
+/adm/daemons/punishd...
+/adm/daemons/storyd...
+/adm/daemons/eventd...
+/adm/daemons/closed...
+/adm/daemons/pkd...
+/adm/daemons/memoryd...
+/adm/daemons/messaged...
+/adm/daemons/backupd...
+/adm/daemons/payd...
+/adm/daemons/mapd...
+/adm/daemons/familyd...
+/adm/daemons/questd...
+/adm/daemons/cpud...
+/adm/daemons/bossd...
+/adm/daemons/autonpc...
+/adm/daemons/wenda...
+/adm/daemons/kuafu...
+/adm/daemons/wabao...
+/adm/daemons/task/set_task...
+/adm/daemons/invasion/invasiond...
+/adm/daemons/examined...
+/adm/daemons/puyid...
+/adm/daemons/paohuand...
+/adm/daemons/lixiand...
+/adm/daemons/tuiguangd...
+/adm/daemons/qqd...
+/adm/daemons/miraid...
+/cmds/bz/bangzhand...
+/cmds/usr/mud_h...
+/cmds/usr/ainvitationd...
+Accepting telnet connections on 0.0.0.0:3333.
+Accepting telnet connections on 0.0.0.0:4444.
+Accepting websocket connections on 0.0.0.0:5555.
+Initializations complete.
+
+old crypt() password detected, It is only using first 2 character as key and ignore password beyond 8 characters, please upgrade to SHA512 using crypt(password) immediately.
+oldcrypt() is deprecated! it is using MD5 and unsafe, please upgrade your code to use crypt(password).
+oldcrypt() is deprecated! it is using MD5 and unsafe, please upgrade your code to use crypt(password).
+oldcrypt() is deprecated! it is using MD5 and unsafe, please upgrade your code to use crypt(password).

@@ -1,0 +1,12 @@
+请选择练功类型：$sp#
+$ZJOBACTS2$
+$3,3,10,30#
+打坐:dazuo$zj#
+吐纳:tuna$zj#
+怒气:berserk$zj#
+任督二脉:breakup$zj#
+元婴出世:animaout$zj#
+武学汲取:derive$zj#
+设定机器人:set sign5$zj#
+开始机器人:set sign1 1$zj#
+停止机器人:unset sign1$zj#

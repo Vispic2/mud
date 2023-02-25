@@ -1,0 +1,127 @@
+// liuli-jinshen.c
+
+#include <ansi.h>
+
+inherit SHAOLIN_SKILL;
+
+int valid_enable(string usage) { return usage == "parry"; }
+
+int valid_learn(object me)
+{
+	if ((int)me->query_skill("force") < 450)
+		return notify_fail("你的内功火候不够，无法领悟琉璃金身。\n"); 
+
+if( me->query_skill("buddhism", 1) < 400 )
+                return notify_fail("你佛法修为不足，无法领悟琉璃金身\n");
+
+ 
+
+if( me->query_skill("sanscrit", 1) < 300 )
+                return notify_fail("你梵文知识不足，无法领悟琉璃金身\n");	if ((int)me->query("max_neili") < 3500)
+		return notify_fail("你的内力还不足以修习琉璃金身。\n");
+
+	if ((int)me->query_skill("parry", 1) < (int)me->query_skill("liuli-jinshen", 1))
+		return notify_fail("你的基本招架水平有限，无法领会更高深的琉璃金身。\n");
+
+	return 1;
+}
+
+string query_txt()
+{
+	return "要求：内功激发450，内力3500，禅宗心法400，梵文300，等级不能高于基本招架"ZJBR
+	"特效：以内力化解攻击者伤害，内力消耗=伤害/50，对比自身(内功激发*12+最大内/2)和攻击者(内功激发*12+内力/2)，同数值1/1概率触发"
+	"，内力低于最大内/2不触发";
+}
+
+mixed valid_damage(object ob, object me, int damage, object weapon)
+{
+	mapping result;
+	int ap, dp;
+	int cost;
+
+	cost = damage / 8;
+
+	if (! living(me) ||
+	    (int)me->query_skill("liuli-jinshen", 1) < 100 ||
+	    (int)me->query("neili") < cost ||
+	    (int)me->query("neili") < me->query("max_neili")/20)
+		return;
+
+	ap = ob->query_skill("force") * 12 + ob->query("max_neili")/1;
+	dp = me->query_skill("force") * 12 + me->query("neili")/1;
+
+	if (ap / 80 + random(ap) < dp)
+	{
+		me->add("neili", -cost);
+        tell_object(me,HBYEL "你默念琉璃心经唤出琉璃金身护住全身上下，用"+cost+"内力抵挡了"+damage+"伤害。"NOR"\n");
+		result = ([ "damage": -damage ]);
+
+		switch (random(5))
+		{
+		case 0:
+			result += (["msg" : HBYEL "$n" HBYEL "唤出六丈琉璃金身笼罩全身光明万丈，犹如诸天古佛加持，$N"
+					    HBYEL "无从下手。"NOR"\n"]);
+					break;
+		case 1:
+			result += (["msg" : HBWHT "只见$N" HBWHT "这一招打了个正中！然而$n"
+					    HBWHT "毫不在意并诵道：归命满月界，净妙琉璃尊。慈悲弘誓广，愿度诸含生。"NOR"\n"]);
+			break;
+		case 2:
+			result += (["msg" : HBYEL "$N" HBYEL "一招正好打在$n" HBYEL "身上，可"
+					    "力量犹如石沉大海，丝毫不起作用.....以三十二大丈夫相，八十随形庄严其身。令一切有情如我无异！"NOR"\n"]);
+			break;
+		case 3:
+			result += (["msg" : HBWHT "$N" HBWHT "一招击在$n" HBWHT "身上，只听$n"
+					    HBWHT "一声大喝：身如琉璃，内外清，心如琉璃，净无瑕秽！
+$N" HBWHT "反被护体罡气震退了"
+					    "数步。"NOR"\n"]);
+			break;
+		default:
+			result += (["msg" : HBWHT "$n" HBWHT "浑若无事的接下了$N"
+					    HBWHT "这一招，却没有受到半点伤害....好似琉璃佛在世，一身气血浑然天成，似已重铸琉璃金身！"NOR"\n"]);
+			break;
+		}
+		return result;
+	}
+}
+
+int query_effect_parry(object attacker, object me)
+{
+	int lvl;
+
+	lvl = me->query_skill("liuli-jinshen", 1);
+	if (lvl < 100) return 0;
+	if (lvl < 150) return 50;
+	if (lvl < 200) return 80;
+	if (lvl < 250) return 10;
+	if (lvl < 300) return 80;
+	if (lvl < 350) return 120;
+	if (lvl < 400) return 100;
+	return 150;
+}
+
+int practice_skill(object me)
+{
+	int cost;
+	int lvl;
+
+	if ((lvl = me->query_skill("liuli-jinshen", 1)) < 100)
+				return notify_fail("你对琉璃金身的了解甚浅，还不足以自行锻炼。\n");
+
+	cost = 85 + (lvl - 100) / 3;
+	if ((int)me->query("qi") < 70)
+		return notify_fail("你的体力太低了。\n");
+
+	if ((int)me->query("neili") < cost)
+		return notify_fail("你的内力不够练琉璃金身。\n");
+
+	me->receive_damage("qi", 50);
+	me->add("neili", -cost);
+	return 1;
+}
+
+string perform_action_file(string action)
+{
+	return __DIR__"liuli-jinshen/" + action;
+}
+
