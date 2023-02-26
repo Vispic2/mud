@@ -19,9 +19,9 @@ void more_str(string tab, string str, int line, int page)
 	if (i >= sizeof(text)) i = sizeof(text);
 	i--;
 
-	show += sprintf("��������Ҽ���������(%d/%dҳ)��\n",page,all); 
+	show += sprintf("你下线玩家及赞助获赠(%d/%d页)：\n",page,all); 
 	show += ZJOBACTS2+ZJMENUF(2,2,9,32);
-	show += "��һҳ:tuig xj "+(page-1)+ZJSEP"��һҳ:tuig xj "+(page+1)+ZJSEP;
+	show += "上一页:tuig xj "+(page-1)+ZJSEP"下一页:tuig xj "+(page+1)+ZJSEP;
 	show += implode(text[j..i], ZJSEP);
 	write(show+"\n");
 }
@@ -46,30 +46,30 @@ int main(object me, string arg)
 			GUIG->create_code(me);
 		}		
 		
-		pops= ZJOBLONG"�ƹ�ϵͳ������壺"+ZJURL("cmds:tuig ?")+HIG"���鿴�ƹ�ϵͳ˵����"NOR""NOR""+ZJBR+ZJBR;
+		pops= ZJOBLONG"推广系统管理面板："+ZJURL("cmds:tuig ?")+HIG"【查看推广系统说明】"NOR""NOR""+ZJBR+ZJBR;
 
 		if(stringp(mysj = GUIG->my_shangj(me))){
 			if(objectp(sj=find_player(mysj))){
-				pops += "�ҵ��ϼ��ǣ�"+ sj->name()+"��"+mysj+"��"+ZJBR+ZJBR;
+				pops += "我的上家是："+ sj->name()+"（"+mysj+"）"+ZJBR+ZJBR;
 			}else{
-				pops += "�ҵ��ϼ��ǣ�"+ mysj+" (δ����)"+ZJBR+ZJBR;
+				pops += "我的上家是："+ mysj+" (未在线)"+ZJBR+ZJBR;
 			}
 		}
 		
 		if(stringp(mycode = GUIG->my_code(me))){
 		if(me->query("web"))
-		pops += "�ҵ��ƹ��룺"+ ESC"[u:tel:"+mycode+"]"+mycode+NOR+HIY" [�������]"+ZJBR+NOR+ZJBR;
+		pops += "我的推广码："+ ESC"[u:tel:"+mycode+"]"+mycode+NOR+HIY" [点击复制]"+ZJBR+NOR+ZJBR;
 		else
-		pops += "�ҵ��ƹ��룺"+ mycode+ZJBR+NOR+ZJBR;
+		pops += "我的推广码："+ mycode+ZJBR+NOR+ZJBR;
 		}else{
-			pops += "�ҵ��ƹ��룺��"+ZJBR+ZJBR;
+			pops += "我的推广码：无"+ZJBR+ZJBR;
 		}
 
 		ljby=GUIG->getallby(me);
-		pops += "�ۼƹ�������"+ ljby+" Ԫ��"+ZJBR+ZJBR;
+		pops += "累计共获赠："+ ljby+" 元宝"+ZJBR+ZJBR;
 		
 		myyb=GUIG->my_yuanbao(me);
-		pops += "��ǰԪ���أ�"+ myyb+" Ԫ��"+ZJBR+ZJBR;
+		pops += "当前元宝池："+ myyb+" 元宝"+ZJBR+ZJBR;
 	
 		
 		
@@ -78,16 +78,16 @@ int main(object me, string arg)
 		pops+=ZJOBACTS2+ZJMENUF(2,2,10,30);
 		
 		if(myyb>0){
-			pops += "��ȡ����Ԫ��:tuig lq" + ZJSEP; 
+			pops += "领取池中元宝:tuig lq" + ZJSEP; 
 		}	
 		
 		if(stringp(mysj)){
-			if(objectp(sj)) pops += "�鿴�ҵ��ϼ�:look "+ mysj + ZJSEP;
+			if(objectp(sj)) pops += "查看我的上家:look "+ mysj + ZJSEP;
 		}else{
-			pops += "�ύ�ϼ��ƹ���:tuig tj" + ZJSEP; 
+			pops += "提交上家推广码:tuig tj" + ZJSEP; 
 		}	
 		
-		pops += "�鿴�ҵ��¼�:tuig xj 1" + "\n"; 
+		pops += "查看我的下家:tuig xj 1" + "\n"; 
 		
 		write(pops);		
 		
@@ -101,7 +101,7 @@ int main(object me, string arg)
 				return 0;
 			
 			GUIG->setbl(to_int(code));
-			tell_object(me,HIY"���������ƹ�ϵͳ��ֵ��ɱ���Ϊ��"+code+"%\n���¼ҳ�ֵ100Ԫ���ϼһ��� "+code+" öԪ����"NOR"\n");
+			tell_object(me,HIY"你已设置推广系统充值提成比例为："+code+"%\n即下家充值100元，上家获赠 "+code+" 枚元宝。"NOR"\n");
 		}else if(com == "xj"){
 			if(mapp(list=GUIG->getxj(me))){
 				if(sizeof(lists=keys(list)))
@@ -110,34 +110,34 @@ int main(object me, string arg)
 					{
 						obj = find_player(lists[i]);
 						if(obj){
-							str += sprintf("%s (%s)"ZJBR+HIY"����������%d Ԫ��"NOR":look %s\n",obj->query("name"),lists[i],list[lists[i]], lists[i]);
+							str += sprintf("%s (%s)"ZJBR+HIY"赞助获赠：%d 元宝"NOR":look %s\n",obj->query("name"),lists[i],list[lists[i]], lists[i]);
 						}else{
-							str += sprintf("δ���� (%s)"ZJBR+HIY"����������%d Ԫ��"NOR":look %s\n",lists[i],list[lists[i]], lists[i]);
+							str += sprintf("未在线 (%s)"ZJBR+HIY"赞助获赠：%d 元宝"NOR":look %s\n",lists[i],list[lists[i]], lists[i]);
 						}
 					}
 				}
 				more_str(ZJOBLONG, str, 10, to_int(code));
 			}else{
-				tell_object(me,HIR"��Ŀǰ��û��������ҡ�"NOR"\n");
+				tell_object(me,HIR"你目前还没有下线玩家。"NOR"\n");
 			}
 		}
 		return 1;
 	}else{
 		if(arg == "tj"){
-			write(INPUTTXT("�ύ���ϼҸ�����ƹ��루�ɻ���Ԫ������"+ZJBR+"ע�⣺һ��id����ֻ���ύһ���ƹ��룬������ɾ���ؽ���Ҳ�޷��ٴ��ύ�ƹ��룬Ҳ�޷�����Ԫ����","tuig tj $txt#")+"\n");
+			write(INPUTTXT("提交你上家给你的推广码（可获赠元宝）："+ZJBR+"注意：一个id终身只能提交一次推广码，即便是删号重建后也无法再次提交推广码，也无法获赠元宝。","tuig tj $txt#")+"\n");
 		}else if(arg == "lq"){
 			GUIG->lingqu(me);
 		}else if(arg == "?"){
-pops= ZJOBLONG+"�ƹ�ϵͳ˵����"+ZJBR+ZJBR+
-"1���ƹ�ϵͳ��Ϊ����������Ϸ�����������������ļ����ҵ�һ�ַ�ʽ��������ҿɷ�չ����������Ϊ�Լ���������ң�����������������ϼҾͿ��Ի���һ��������Ԫ����"+ZJBR+ZJBR+
-"2������״δ��ƹ�ϵͳ�������ͻ�õ�һ�������Լ����ƹ��룬�����ƹ����ṩ������ң�����ҽ�����Ϸ�ύ���ƹ�����������Ҿͳ�Ϊ�������������ˡ�"+ZJBR+ZJBR+
-"3���������������ϵͳҲ���������һ���ƹ�����㣬�����Ҳ�������ƹ�������չ�Լ���������ҡ�"+ZJBR+ZJBR+
-"4��������������������ϵͳ�ᰴ�������Ķ��ٰ�����������һ��������Ԫ����������Ԫ�����������ƹ�Ԫ�����У����е�Ԫ�������ʱ��ȡ��"+ZJBR+ZJBR+
-"5��������������������ʱ�򣬲������Լ���û����Ϸ�У�������Ԫ�������������ƹ�Ԫ�����У���������֮�󼴿���ȡ��"+ZJBR+ZJBR+
-"6������㷢չ���������Խ�࣬��ô���õ�Ԫ�������ͻ�Խ�࣬��Ϊ�������Խ�������Ϳ���Խ�࣬��Ȼ���õ�Ԫ�������ͻ�Խ�ࡣ"+ZJBR+ZJBR+
-"7����ҵõ����Լ����ƹ������ô�����Ҿͻ�����ӵ������ƹ��룬������ɾ���ؽ�����Ҳ������ʧ�����ƹ���������Ч��"+ZJBR+ZJBR+
-"8����B��ҳɹ��ύ��A��ҵ��ƹ���֮����ôB�����������A��ҵĵ�������ң�������AB˫����ɾ���ؽ�����Ҳ�ı䲻������֮��������߹�ϵ��"+ZJBR+ZJBR+
-"9����Ҳ����ύ�Լ����ƹ��룬�������Լ��ƹ��Լ���Ϊ�Լ������ߣ�Ҳ�����ύ�Լ�������ҵ��ƹ��룬�������߲����໥�ƹ㡣\n";
+pops= ZJOBLONG+"推广系统说明："+ZJBR+ZJBR+
+"1、推广系统是为了提升本游戏人气，鼓励老玩家招募新玩家的一种方式，即老玩家可发展多个新玩家作为自己的下线玩家，当下线玩家赞助后，上家就可以获赠一定比例的元宝。"+ZJBR+ZJBR+
+"2、玩家首次打开推广系统管理面板就会得到一个属于自己的推广码，将此推广码提供给新玩家，新玩家进入游戏提交此推广码后，这个新玩家就成为了你的下线玩家了。"+ZJBR+ZJBR+
+"3、即便你是新玩家系统也会免费赠送一个推广码给你，新玩家也可以用推广码来发展自己的下线玩家。"+ZJBR+ZJBR+
+"4、当你的下线玩家赞助后，系统会按赞助金额的多少按比例奖励你一定数量的元宝，奖励的元宝会存入你的推广元宝池中，池中的元宝你可随时领取。"+ZJBR+ZJBR+
+"5、当你的下线玩家赞助的时候，不管你自己在没在游戏中，奖励的元宝都会存入你的推广元宝池中，当你上线之后即可领取。"+ZJBR+ZJBR+
+"6、如果你发展的下线玩家越多，那么你获得的元宝奖励就会越多，因为下线玩家越多赞助就可能越多，固然你获得的元宝奖励就会越多。"+ZJBR+ZJBR+
+"7、玩家得到了自己的推广码后，那么这个玩家就会终身拥有这个推广码，即便是删号重建人物也不会消失，此推广码终身有效。"+ZJBR+ZJBR+
+"8、当B玩家成功提交了A玩家的推广码之后，那么B玩家终身都是A玩家的的下线玩家，即便是AB双方都删号重建人物也改变不了他们之间的上下线关系。"+ZJBR+ZJBR+
+"9、玩家不能提交自己的推广码，即不能自己推广自己成为自己的下线，也不能提交自己下线玩家的推广码，即上下线不能相互推广。\n";
 			write(pops);
 		}
 	}
@@ -145,7 +145,7 @@ pops= ZJOBLONG+"�ƹ�ϵͳ˵����"+ZJBR+ZJBR+
 }
 
 /*
-BY��NAME
-QQ��3468713544
-DATE��2 0 2 2 . 0 2 . 0 3
+BY：NAME
+QQ：3468713544
+DATE：2 0 2 2 . 0 2 . 0 3
 */

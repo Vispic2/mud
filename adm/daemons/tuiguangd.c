@@ -19,10 +19,10 @@ inherit F_SAVE;
 void create() 
 { 
 	seteuid(getuid());
-	set("bilv",3000); //��ɽ���Ԫ������ Ĭ�ϳ�1Ԫ�����ϼ�30Ԫ�� 
+	set("bilv",3000); //提成奖励元宝比率 默认充1元奖励上家30元宝 
 	restore();
-	set("channel_id", "�ƹ㾫��");
-	CHANNEL_D->do_channel( this_object(), "sys", "�ƹ㾫���Ѿ�������");
+	set("channel_id", "推广精灵");
+	CHANNEL_D->do_channel( this_object(), "sys", "推广精灵已经启动。");
 }
 
 void remove()
@@ -102,12 +102,12 @@ int create_code(object me){
 		
 		save();
 		
-		log_file("adms/create", sprintf("%s��%s(%s)�������ƹ��룺%s��\n",cntime(time()),me->query("name"),meid,query("tguser/"+meid+"/code")));
+		log_file("adms/create", sprintf("%s：%s(%s)创建了推广码：%s。\n",cntime(time()),me->query("name"),meid,query("tguser/"+meid+"/code")));
 		
-		tell_object(me,HIY"����ƹ��봴���ɹ�\n���ס����ƹ��룺"+query("tguser/"+meid+"/code")+""NOR"\n");
+		tell_object(me,HIY"你的推广码创建成功\n请记住你的推广码："+query("tguser/"+meid+"/code")+""NOR"\n");
 		return 1;
 	}else{
-		tell_object(me,HIR"���Ѿ������ƹ����ˣ�����Ҫ�ٴ����ƹ��롣\n����ƹ����ǣ�"+my_code(me)+""NOR"\n");
+		tell_object(me,HIR"你已经有了推广码了，不需要再创建推广码。\n你的推广码是："+my_code(me)+""NOR"\n");
 		return 0;
 	}
 }
@@ -128,7 +128,7 @@ int chongzhi(object me,int rmb){
 		
 		save();
 		
-		log_file("adms/chongzhi", sprintf("%s��%s(%s)��ֵ��%dԪ���ϼ�(%s)Ԫ��������Ԫ����%d��\n",cntime(time()),me->query("name"),meid,rmb,shangjia,ybs));
+		log_file("adms/chongzhi", sprintf("%s：%s(%s)充值：%d元，上家(%s)元宝池增加元宝：%d。\n",cntime(time()),me->query("name"),meid,rmb,shangjia,ybs));
 		
 		return 1;
 	}
@@ -151,12 +151,12 @@ int lingqu(object me,int rmb){
 		me->add("yuanbao",ybs);
 		me->save();
 		
-		log_file("adms/lingqu", sprintf("%s��%s(%s)��ȡ��Ԫ��%d����\n",cntime(time()),me->query("name"),meid,ybs));
+		log_file("adms/lingqu", sprintf("%s：%s(%s)领取了元宝%d个。\n",cntime(time()),me->query("name"),meid,ybs));
 		
-		tell_object(me,HIY"�������ƹ�Ԫ��������ȡ��Ԫ����"+ybs+"����"NOR"\n");
+		tell_object(me,HIY"你从你的推广元宝池中领取了元宝："+ybs+"个。"NOR"\n");
 		return 1;
 	}else{
-		tell_object(me,HIR"����ƹ�Ԫ������û��Ԫ��������ȡ��ɶӴ��"NOR"\n");
+		tell_object(me,HIR"你的推广元宝池中没有元宝，你领取个啥哟。"NOR"\n");
 	}
 	
 	return 0;
@@ -195,21 +195,21 @@ int tijiao_code(object me, string code){
 					//me->add("yuanbao",1000);
 					me->save();
 					
-					log_file("adms/tijiao", sprintf("%s��%s(%s)�ύ�ƹ��룺%s���ϼ��ǣ�%s��\n",cntime(time()),me->query("name"),meid,code,shangjia));
+					log_file("adms/tijiao", sprintf("%s：%s(%s)提交推广码：%s，上家是：%s。\n",cntime(time()),me->query("name"),meid,code,shangjia));
 					
-					tell_object(me,HIY"�ƹ����ύ�ɹ���������ֵ�����˼��ɻ��50%�ķ�����\nע�⣺�ύ�ƹ�������ֻ��һ�Σ�ɾ���ؽ���Ҳ�޷����ύ��Ҳ�޷����ϵͳ������Ԫ����"NOR"\n");						
+					tell_object(me,HIY"推广码提交成功，如果你充值邀请人即可获得50%的返利。\n注意：提交推广码终身只此一次，删档重建后也无法再提交，也无法获得系统奖励的元宝。"NOR"\n");						
 				}else{	
-					tell_object(me,HIR"�㲻���ύ���¼ҵ��ƹ��롣"NOR"\n");				
+					tell_object(me,HIR"你不能提交你下家的推广码。"NOR"\n");				
 				}
 
 			}else{
-				tell_object(me,HIR"�����ύ�Լ����ƹ��롣"NOR"\n");
+				tell_object(me,HIR"不能提交自己的推广码。"NOR"\n");
 			}
 		}else{
-			tell_object(me,HIR"���ύ���ƹ�����Ч�����ʵ�����ύ��"NOR"\n");
+			tell_object(me,HIR"你提交的推广码无效，请核实后再提交。"NOR"\n");
 		}
 	}else{
-		tell_object(me,HIR"���Ѿ��ύ���ƹ����ˣ�һ��idһ��ֻ���ύһ���ƹ��룬������ɾ���ؽ�����Ҳ�޷��ٴ��ύ��"NOR"\n");
+		tell_object(me,HIR"你已经提交过推广码了，一个id一生只能提交一次推广码，即便是删档重建人物也无法再次提交。"NOR"\n");
 	}
 }
 
@@ -252,7 +252,7 @@ void setbl(int bl){
 }
 
 /*
-BY��NAME
-QQ��21315491
-DATE��2 0 2 2 . 0 2 . 0 3
+BY：NAME
+QQ：21315491
+DATE：2 0 2 2 . 0 2 . 0 3
 */

@@ -1,6 +1,6 @@
 ========================================================================
-Full Command Line: E:\ddd\world\driver.exe config.ini 
-Boot Time: Sat Dec 17 19:04:10 2022
+Full Command Line: driver.exe config.ini 
+Boot Time: Sun Feb 26 23:09:24 2023
 Version: fluffos v2019.20220507-13-gc2f3e886 (Microsoft Windows)
 jemalloc Version: 5.3.0-0-g54eaed1d8b56b1aa528be3bdd1877e59c56fa90c
 ICU Version: 71.1
@@ -317,7 +317,3 @@ Accepting telnet connections on 0.0.0.0:4444.
 Accepting websocket connections on 0.0.0.0:5555.
 Initializations complete.
 
-old crypt() password detected, It is only using first 2 character as key and ignore password beyond 8 characters, please upgrade to SHA512 using crypt(password) immediately.
-oldcrypt() is deprecated! it is using MD5 and unsafe, please upgrade your code to use crypt(password).
-oldcrypt() is deprecated! it is using MD5 and unsafe, please upgrade your code to use crypt(password).
-oldcrypt() is deprecated! it is using MD5 and unsafe, please upgrade your code to use crypt(password).
